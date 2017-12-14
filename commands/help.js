@@ -4,7 +4,7 @@ exports.run = (client, message, args) => {
   if (!args[0]) {
     const commandNames = Array.from(client.commands.keys());
     const longest = commandNames.reduce((long, str) => Math.max(long, str.length), 0);
-    // message.channel.sendCode('asciidoc', `Youmu-chan's Command List\n\n[Use ${prefix}help <commandname> for details]\n\n${client.commands.map(c => `${prefix}${c.help.name}${' '.repeat(longest - c.help.name.length)} :: ${c.help.description}`).join('\n')}`);
+    // message.channel.sendCode('asciidoc', `Haruna's Command List\n\n[Use ${prefix}help <commandname> for details]\n\n${client.commands.map(c => `${prefix}${c.help.name}${' '.repeat(longest - c.help.name.length)} :: ${c.help.description}`).join('\n')}`);
     const embed = new Discord.RichEmbed()
       .setAuthor(`\u200b`, `${message.author.avatarURL}`)
       .setTitle(`Youmu-chan\'s Commands List`)

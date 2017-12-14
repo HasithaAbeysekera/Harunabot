@@ -13,6 +13,6 @@ exports.conf = {
 
 exports.help = {
     name: 'dsay',
-    description: 'Youmu will talk in the default channel',
+    description: 'Haruna will talk in the default channel',
     usage: 'dsay [message]'
 };

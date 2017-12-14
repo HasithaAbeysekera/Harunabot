@@ -11,6 +11,6 @@ exports.conf = {
 
 exports.help = {
   name: 'say',
-  description: 'Youmu will repeat your words',
+  description: 'Haruna will repeat your words',
   usage: 'say'
 };
