@@ -1,6 +1,8 @@
+const defaultChannelID = require("../config.json").defaultChannel;
 const Discord = require("discord.js");
 module.exports = (oldEmoji, newEmoji) => {
     guild = oldEmoji.guild
+    defaultChannel = guild.channels.find(u => u.id == defaultChannelID);
     console.log(`Emoji updated on guild: ${guild.name}`);
     const embed = new Discord.RichEmbed()
         .setAuthor(`Emoji updated`, `${newEmoji.client.user.avatarURL}`)
@@ -9,5 +11,5 @@ module.exports = (oldEmoji, newEmoji) => {
         .addField(`\u200b`, `New name: \`:${newEmoji.name}:\``)
         .setFooter(``, '')
         .setTimestamp();
-    guild.defaultChannel.sendEmbed(embed);
+    defaultChannel.send(embed);
 }

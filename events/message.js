@@ -11,7 +11,7 @@ module.exports = message => {
 
     if (message.channel.type == "dm") {
         if ( !((command == 'help') || (client.aliases.get(command)) == 'help')) {
-            message.channel.sendMessage("Sorry, I only respond to the `help` command in a DM");
+            message.channel.send("Sorry, I only respond to the `help` command in a DM");
             return;
         }
     }
