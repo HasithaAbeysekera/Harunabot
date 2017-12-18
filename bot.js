@@ -57,10 +57,10 @@ client.elevation = message => {
      is then sent to the command handler for verification*/
   let permlvl = 0;
   let mod_role = message.guild.roles.find('name', modrolename);
-  if (mod_role && message.member.roles.has(mod_role.id)) permlvl = 2;
+  if (mod_role && message.member.roles.has(mod_role.id)) permlvl = 1;
   let admin_role = message.guild.roles.find('name', adminrolename);
-  if (admin_role && message.member.roles.has(admin_role.id)) permlvl = 3;
-  if (message.author.id === ownerid) permlvl = 4;
+  if (admin_role && message.member.roles.has(admin_role.id)) permlvl = 2;
+  if (message.author.id === ownerid) permlvl = 3;
   return permlvl;
 };
 

@@ -31,7 +31,7 @@ exports.run = (client, message, args) => {
     if (client.commands.has(command)) {
       // command = client.commands.get(command);
       // message.channel.sendCode('asciidoc', `= ${command.help.name} = \n${command.help.description}\nusage::${command.help.usage}`);
-      const cmdPermlvl = ["Everyone", "", "Mods Only", "Admin Only", "Owner Only"]
+      const cmdPermlvl = ["Everyone", "Captains", "Admirals", "Owner Only"]
       let thisCommand = client.commands.get(command);
       let aliaslist = thisCommand.conf.aliases;
       if (aliaslist.length == 0) {
