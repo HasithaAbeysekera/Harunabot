@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 exports.run = (client, message, args) => {
-    if (!message.mentions.members) {
+    if (!message.mentions.members.size) {
         message.channel.send("Please mention a user to warn");
     } else {
         let member = message.mentions.members.first();
