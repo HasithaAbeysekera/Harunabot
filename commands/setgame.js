@@ -9,12 +9,12 @@ exports.run = function(client, message, args) {
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ['game', 'setstatus', 'status'],
+  aliases: ['setstatus'],
   permLevel: 3
 };
 
 exports.help = {
   name: 'setgame',
-  description: 'Set Youmu\'s status. eg: setgame [CSGO] will display "Playing CSGO"',
+  description: 'Set Haruna\'s status. eg: setgame CSGO will display "Playing CSGO"',
   usage: 'setgame [game]'
 };

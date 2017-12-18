@@ -15,6 +15,6 @@ exports.conf = {
 
 exports.help = {
   name: 'setstream',
-  description: 'Change Youmu\'s status to streaming [streamtitle]',
+  description: 'Change Haruna\'s status to streaming [streamtitle]',
   usage: 'setstream [streamtitle]'
 };

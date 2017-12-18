@@ -12,12 +12,12 @@ exports.run = function(client, message, args) {
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ['clap', 'puck'],
+  aliases: ['clapping'],
   permLevel: 0
 };
 
 exports.help = {
-  name: 'puckclap',
+  name: 'clap',
   description: 'Puck approves',
-  usage: 'puckclap'
+  usage: 'clap'
 };

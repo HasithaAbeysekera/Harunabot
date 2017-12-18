@@ -60,6 +60,6 @@ exports.conf = {
 
 exports.help = {
   name: 'purge',
-  description: 'Removes last X messages from the channel. Can specify an optional user to only remove their messages.',
+  description: 'Removes last X messages from the channel. Can specify a user to only remove their messages.',
   usage: 'purge [number] [username]'
 };

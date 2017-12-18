@@ -6,5 +6,6 @@
   "logChannel": "logChannel id, this channel will be used for the member joining and leaving event messages",
   "modrolename": "ModeratorRoleNameHere",
   "adminrolename": "AdminRoleNameHere",
-  "silencedrole": "SilencedRoleNameHere"
+  "silencedrole": "SilencedRoleNameHere",
+  "avatarTimer": "time in minutes for avatar change function"
 }

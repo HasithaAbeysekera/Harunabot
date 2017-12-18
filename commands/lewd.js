@@ -5,7 +5,6 @@ exports.run = function(client, message, args) {
 
   size = assets["lewd"].length;
   quoteNumber = Math.floor((Math.random() * size) + 1);
-  message.channel.send(`${size}`);
 
   const embed = new Discord.RichEmbed()
       .setImage(assets["lewd"][quoteNumber])
@@ -22,6 +21,6 @@ exports.conf = {
 
 exports.help = {
   name: 'lewd',
-  description: 'Puck approves',
-  usage: 'puckclap'
+  description: 'When things are too lewd to handle',
+  usage: 'lewd'
 };
