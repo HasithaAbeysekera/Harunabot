@@ -5,7 +5,7 @@ exports.run = function(client, message, args) {
 
   size = quotes.length;
   quoteNumber = Math.floor((Math.random() * size) + 1);
-  message.channel.send(`${quotes[quoteNumber]}`);
+  message.channel.send(`Quote number ${quoteNumber}: ${quotes[quoteNumber]}`);
 };
 
 exports.conf = {
