@@ -12,7 +12,7 @@ exports.run = function(client, message, args) {
 exports.conf = {
     enabled: true,
     guildOnly: false,
-    aliases: ['carnivaldayo'],
+    aliases: ['carnivaldayo', 'maya'],
     permLevel: 0
 };
 

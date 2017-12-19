@@ -76,7 +76,7 @@ exports.run = (client, message, args) => {
     }
 };
 exports.conf = {
-    enabled: true,
+    enabled: false,
     guildOnly: false,
     aliases: ['silence'],
     permLevel: 2
