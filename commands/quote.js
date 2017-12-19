@@ -4,8 +4,8 @@ var quotes = require('../assets/quotes.json');
 exports.run = function(client, message, args) {
 
   size = quotes.length;
-  quoteNumber = Math.floor((Math.random() * size) + 1);
-  message.channel.send(`Quote number ${quoteNumber}: ${quotes[quoteNumber]}`);
+  quoteNumber = Math.floor((Math.random() * size));
+  message.channel.send(`${quotes[quoteNumber]}`);
 };
 
 exports.conf = {
