@@ -9,9 +9,9 @@ exports.run = (client, message, args) => {
             reason = 'No reason mentioned';
         }
         const embed = new Discord.RichEmbed()
-            .setAuthor(`YOU HAVE BEEN WARNED`, `${message.author.avatarURL}`)
+            .setAuthor(`YOU HAVE BEEN WARNED`, `${message.author.displayavatarURL}`)
             .setTitle(`\u200b`)
-            .setThumbnail(member.user.avatarURL)
+            .setThumbnail(member.user.displayavatarURL)
             .setColor('#ff0000')
             .addField(`User:`, `${member.displayName}`)
             .addField('Mod:', `${message.author.username}`)
