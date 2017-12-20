@@ -1,7 +1,7 @@
-var defaultChannel = require('../config.json').defaultChannel;
+var default = require('../config.json').defaultChannel;
 
 exports.run = function(client, message, args) {
-    return message.guild.defaultChannel.send(args.join(" "));
+    return message.guild.default.send(args.join(" "));
 };
 
 exports.conf = {
