@@ -1,7 +1,7 @@
 const defaultChannelID = require("../config.json").defaultChannel;
 
 exports.run = function(client, message, args) {
-  defaultChannel = guild.channels.find(u => u.id == defaultChannelID);
+  defaultChannel = message.guild.channels.find(u => u.id == defaultChannelID);
   return defaultChannel.send(args.join(" "));
 };
 
