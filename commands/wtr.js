@@ -3,20 +3,12 @@ const fs = require('fs');
 var validRegions = ["sea", "na", "eu", "ru"];
 var request = require("request");
 exports.run = function(client, message, args) {
-  if (!args[0]) {//!args[1]
+  if (!args[0]) { //!args[1]
     return message.channel.send("Invalid input, use the help commands for more details");
   } else {
-    // if (validRegions.indexOf(args[0].toLowerCase()) == -1) {
-    //   return message.channel.send(`Invalid region, the valid regions are : ${validRegions}`);
-    // } else {
-    //   regionURL = args[0].toLowerCase();
+
     username = args[0].toLowerCase();
-    // if (args[0].toLowerCase() == "sea") {
-    //   regionURL = "asia";
-    // }
-    // if (args[0].toLowerCase() == "na") {
-    //   regionURL = "com";
-    // }
+
     var apiURL = `https://api.worldofwarships.asia/wows/account/list/?application_id=682fc0fd90551e7e6ee67aa0d40e2db8&search=${username}`;
 
     request({
@@ -53,5 +45,5 @@ exports.conf = {
 exports.help = {
   name: 'wtr',
   description: 'Displays your WTR signature from warships.today',
-  usage: 'wtr [region] [username]'
+  usage: 'wtr [username]'
 };
