@@ -31,7 +31,7 @@ exports.run = function(client, message, args) {
         var nickname = body["data"][0].nickname;
         var accountId = body["data"][0].account_id;
         message.channel.send(`Grabbing WTR signature for ${nickname}...`);
-        picURL = `https://${regionURL}.warshipstoday.com/signature/${accountId}/dark.png`
+        picURL = `https://asia.warshipstoday.com/signature/${accountId}/dark.png`
         // message.channel.send(`WTR image: ${picURL}`);
         message.channel.send(new Discord.Attachment(picURL, 'dark.png')).then(msg => {
           console.log("wtr image sent");
