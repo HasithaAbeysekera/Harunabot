@@ -7,7 +7,7 @@ exports.run = (client, message, args) => {
     // message.channel.sendCode('asciidoc', `Haruna's Command List\n\n[Use ${prefix}help <commandname> for details]\n\n${client.commands.map(c => `${prefix}${c.help.name}${' '.repeat(longest - c.help.name.length)} :: ${c.help.description}`).join('\n')}`);
     const embed = new Discord.RichEmbed()
       .setAuthor(`\u200b`, `${message.author.avatarURL}`)
-      .setTitle(`Youmu-chan\'s Commands List`)
+      .setTitle(`Haruna\'s Commands List`)
       .setThumbnail(client.user.avatarURL)
       .setColor(0x00AE86)
       .addField('\u200b', '\u200b', true)
