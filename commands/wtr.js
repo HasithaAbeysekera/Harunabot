@@ -17,7 +17,7 @@ exports.run = function(client, message, args) {
     }, function(error, response, body) {
       if (!error && response.statusCode === 200) {
         //console.log(body) // Print the json response
-        if (!body["data"][0]) {
+        if (!body["data"]) {
           return message.channel.send("Error: no user found");
         }
         var nickname = body["data"][0].nickname;
