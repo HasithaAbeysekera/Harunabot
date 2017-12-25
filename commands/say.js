@@ -1,8 +1,5 @@
 exports.run = function(client, message, args) {
-  if(message.content.includes('@everyone') || message.content.includes('@here')){
-    return message.channel.send("Please do not use me for `@everyone` or `@here` pings");
-  }
-  return message.channel.send(args.join(" "));
+  return message.channel.send(`${args.join(" ")}`);
 };
 
 exports.conf = {
