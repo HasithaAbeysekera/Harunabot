@@ -1,5 +1,6 @@
 exports.run = function(client, message, args) {
-  return message.channel.send(`${args.join(" ")}`);
+  msg = args.join(" ");
+  return message.channel.send(`\`${msg}\``);
 };
 
 exports.conf = {
