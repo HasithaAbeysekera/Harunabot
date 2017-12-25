@@ -5,11 +5,11 @@ const owner = require('../config.json').ownerid;
 exports.run = function(client, message, args) {
   if (!args[0]) {
     message.reply("your avatar is:");
-    return message.channel.send(new Discord.Attachment(message.author.avatarURL, 'avatar.jpg'));
+    return message.channel.send(new Discord.Attachment(message.author.displayAvatarURL, 'avatar.jpg'));
   } else if (message.mentions.users.first()) {
     target = message.mentions.users.first();
     message.channel.send(`${target}'s avatar is:`);
-    return message.channel.send(new Discord.Attachment(target.avatarURL, 'avatar.jpg'));
+    return message.channel.send(new Discord.Attachment(target.displayAvatarURL, 'avatar.jpg'));
   } else {
     return message.channel.send(`Error: incorrect format. See help for further details`);
   }

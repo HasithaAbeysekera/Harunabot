@@ -21,11 +21,15 @@ exports.run = (client, message, args) => {
     }
     message.channel.send(`${message.author}, I've sent you a PM with the help information`);
     message.author.send(
-      embed,
-      '', {
-        disableEveryone: true
-      }
-    );
+        embed, '', {
+          disableEveryone: true
+        }
+      ).then(() => {
+        if (message.channel.type !== 'dm') {
+          message.channel.send('I\'ve sent you a DM with all my commands!');
+        }
+      })
+      .catch(() => message.reply('it seems like I can\'t DM you!'));
   } else {
     let command = args[0];
     if (client.commands.has(command)) {
