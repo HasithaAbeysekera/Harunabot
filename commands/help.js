@@ -6,9 +6,9 @@ exports.run = (client, message, args) => {
     const longest = commandNames.reduce((long, str) => Math.max(long, str.length), 0);
     // message.channel.sendCode('asciidoc', `Haruna's Command List\n\n[Use ${prefix}help <commandname> for details]\n\n${client.commands.map(c => `${prefix}${c.help.name}${' '.repeat(longest - c.help.name.length)} :: ${c.help.description}`).join('\n')}`);
     const embed = new Discord.RichEmbed()
-      .setAuthor(`\u200b`, `${message.author.avatarURL}`)
+      .setAuthor(`\u200b`, `${message.author.displayAvatarURL}`)
       .setTitle(`Haruna\'s Commands List`)
-      .setThumbnail(client.user.avatarURL)
+      .setThumbnail(client.user.displayAvatarURL)
       .setColor(0x00AE86)
       .addField('\u200b', '\u200b', true)
       .setFooter(`For more information type ${prefix}help [commandname]`, '')
@@ -45,9 +45,9 @@ exports.run = (client, message, args) => {
       }
 
       const embed = new Discord.RichEmbed()
-        .setAuthor(`${prefix}${command}`, `${message.author.avatarURL}`)
+        .setAuthor(`${prefix}${command}`, `${message.author.displayAvatarURL}`)
         .setTitle(`\u200b`)
-        .setThumbnail(client.user.avatarURL)
+        .setThumbnail(client.user.displayAvatarURL)
         .setColor(0x00AE86)
         .addField(`\u200b`, `**Aliases: ** ${aliases}`)
         .addField(`\u200b`, `**Usage: ** ${prefix}${thisCommand.help.usage}`)
