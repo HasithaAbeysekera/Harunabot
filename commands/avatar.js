@@ -24,6 +24,6 @@ exports.conf = {
 
 exports.help = {
   name: 'avatar',
-  description: 'Display\'s the user\'s or server\'s avatar. Displays your own avatar if username is empty',
+  description: 'Display\'s the user\'s or server\'s avatar. Displays your own avatar if no username is provided',
   usage: 'avatar [username (plaintext or mention)] or [server]'
 };

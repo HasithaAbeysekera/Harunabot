@@ -14,7 +14,7 @@ exports.run = (client, message, args) => {
             .setThumbnail(member.user.displayAvatarURL)
             .setColor('#ff0000')
             .addField(`User:`, `${member.displayName}`)
-            .addField('Mod:', `${message.author.username}`)
+            .addField('Admin:', `${message.author.username}`)
             .addField('Reason:', `${reason}`)
             .setTimestamp();
         message.channel.send(embed);

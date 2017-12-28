@@ -15,6 +15,6 @@ exports.conf = {
 
 exports.help = {
   name: 'shutdown',
-  description: 'Shuts down Youmu',
+  description: 'Shuts down Haruna',
   usage: 'shutdown'
 };

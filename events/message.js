@@ -25,7 +25,7 @@ module.exports = message => {
     } else {
       let perms = client.elevation(message);
       if (perms < cmd.conf.permLevel) {
-        return message.channel.send("You don't have permission to use");
+        return message.channel.send(`You don't have permission to use. Perm level ${cmd.conf.permLevel}, your perm ${perms}`);
       }
     }
     cmd.run(client, message, args, perms);

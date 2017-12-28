@@ -85,6 +85,6 @@ exports.conf = {
 
 exports.help = {
   name: 'mute',
-  description: 'Mutes or unmutes the mentionned user for a given length of time',
+  description: 'Mutes or unmutes the mentionned user for a given length of time (WIP)',
   usage: 'mute [user] [time]'
 };
