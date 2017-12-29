@@ -19,7 +19,7 @@ exports.run = (client, message, args) => {
       clist = client.commands.array()[i];
       embed.addField(`${prefix}${clist.help.name}`, `${clist.help.description}`);
     }
-    message.channel.send(`${message.author}, I've sent you a PM with the help information`);
+    // message.channel.send(`${message.author}, I've sent you a PM with the help information`);
     message.author.send(
         embed, '', {
           disableEveryone: true
