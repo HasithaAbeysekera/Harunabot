@@ -49,10 +49,15 @@ exports.run = (client, message, args) => {
         .setTitle(`\u200b`)
         .setThumbnail(client.user.displayAvatarURL)
         .setColor(0x00AE86)
-        .addField(`\u200b`, `**Aliases: ** ${aliases}`)
-        .addField(`\u200b`, `**Usage: ** ${prefix}${thisCommand.help.usage}`)
-        .addField(`\u200b`, `**Description - ** ${thisCommand.help.description}`)
-        .addField(`\u200b`, `**Permission Level - ** ${cmdPermlvl[thisCommand.conf.permLevel]}`)
+        .addField(`\u200b`, `**Aliases: ** ${aliases}\n` +
+          `**Usage: ** ${prefix}${thisCommand.help.usage}\n` +
+          `**Description - ** ${thisCommand.help.description}\n` +
+          `**Permission Level - ** ${cmdPermlvl[thisCommand.conf.permLevel]}\n`)
+
+        // .addField(`\u200b`, `**Aliases: ** ${aliases}`)
+        // .addField(`\u200b`, `**Usage: ** ${prefix}${thisCommand.help.usage}`)
+        // .addField(`\u200b`, `**Description - ** ${thisCommand.help.description}`)
+        // .addField(`\u200b`, `**Permission Level - ** ${cmdPermlvl[thisCommand.conf.permLevel]}`)
         .setTimestamp();
 
       message.channel.send(embed);
