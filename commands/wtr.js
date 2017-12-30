@@ -7,7 +7,7 @@ exports.run = function(client, message, args) {
     return message.channel.send("Invalid input, use the help commands for more details");
   } else {
 
-    username = args[0].toLowerCase();
+    username = args[0].cleanContent.toLowerCase();
 
     var apiURL = `https://api.worldofwarships.asia/wows/account/list/?application_id=682fc0fd90551e7e6ee67aa0d40e2db8&search=${username}`;
 
@@ -17,7 +17,7 @@ exports.run = function(client, message, args) {
     }, function(error, response, body) {
       if (!error && response.statusCode === 200) {
         //console.log(body) // Print the json response
-        if (!body["data"][0]) {
+        if (!body["data"] || !body["data"][0]) {
           return message.channel.send("Error: no user found");
         }
         var nickname = body["data"][0].nickname;
