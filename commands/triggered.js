@@ -15,7 +15,7 @@ exports.run = function(client, message, args) {
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ['trigger'],
+  aliases: ['trigger', 'ree', 'reee', 'reeee'],
   permLevel: 0
 };
 

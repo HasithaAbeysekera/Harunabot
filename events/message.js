@@ -4,7 +4,7 @@ module.exports = message => {
   if (message.author.bot) return;
   if (!message.content.startsWith(prefix)) return;
 
-  let command = message.content.split(' ')[0].slice(prefix.length);
+  let command = message.content.toLowerCase().split(' ')[0].slice(prefix.length);
   let args = message.content.split(' ').slice(1);
   //  let perms = client.elevation(message);
   let cmd;
@@ -25,7 +25,7 @@ module.exports = message => {
     } else {
       let perms = client.elevation(message);
       if (perms < cmd.conf.permLevel) {
-        return message.channel.send(`You don't have permission to use. Perm level ${cmd.conf.permLevel}, your perm ${perms}`);
+        return message.channel.send(`You don't have permission to use this command.`);
       }
     }
     cmd.run(client, message, args, perms);

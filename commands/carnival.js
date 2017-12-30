@@ -18,6 +18,6 @@ exports.conf = {
 
 exports.help = {
     name: 'carnival',
-    description: 'IT\'S A CARNIVAL',
+    description: 'IT\'S CARNIVAL TIME',
     usage: 'carnival'
 };

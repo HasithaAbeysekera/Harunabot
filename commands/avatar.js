@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 var getUser = require('../util/getUser.js');
 const owner = require('../config.json').ownerid;
+const prefix = require('../config.json').prefix;
 
 exports.run = function(client, message, args) {
   if (!args[0]) {
@@ -11,7 +12,7 @@ exports.run = function(client, message, args) {
     message.channel.send(`${target}'s avatar is:`);
     return message.channel.send(new Discord.Attachment(target.displayAvatarURL, 'avatar.jpg'));
   } else {
-    return message.channel.send(`Error: incorrect format. See help for further details`);
+    return message.channel.send(`Error: incorrect format. Type '${prefix}help avatar' for further details`);
   }
 };
 
@@ -25,5 +26,5 @@ exports.conf = {
 exports.help = {
   name: 'avatar',
   description: 'Display\'s the user\'s or server\'s avatar. Displays your own avatar if no username is provided',
-  usage: 'avatar [username (plaintext or mention)] or [server]'
+  usage: 'avatar [username]'
 };
