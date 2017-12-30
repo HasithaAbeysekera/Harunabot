@@ -69,14 +69,16 @@ exports.run = (client, message, args) => {
         //   return reaction.emoji.name === ':x:' && user.id === message.author.id;
         // };
 
-        const collector = msg.createReactionCollector((reaction, user) =>  reaction.emoji.name === '❌' && user.id === message.author.id, {
-          time: 60000}
-        );
+        const collector = msg.createReactionCollector((reaction, user) => reaction.emoji.name === '❌' && user.id === message.author.id, {
+          time: 60000
+        });
 
         // collector.on('collect', r => console.log(`Collected ${r.emoji.name}`)
-        collector.on('collect', r => msg.delete());
+        collector.on('collect', r => msg.delete().then(msg => console.log(`Deleted message from ${msg.author}`))
+          .catch(console.error));
 
-        collector.on('end', r => msg.delete());
+        collector.on('end', r => msg.delete().then(msg => console.log(`Deleted message from ${msg.author}`))
+          .catch(console.error));
       }).catch((err => {
         console.log(err.stack);
       }));
