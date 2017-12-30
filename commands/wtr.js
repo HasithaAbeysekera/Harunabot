@@ -3,11 +3,11 @@ const fs = require('fs');
 var validRegions = ["sea", "na", "eu", "ru"];
 var request = require("request");
 exports.run = function(client, message, args) {
-  if (!args[0]) { //!args[1]
+  if (!args[0] || message.mentions.users.first()) { //!args[1]
     return message.channel.send("Invalid input, use the help commands for more details");
   } else {
 
-    username = args[0].cleanContent.toLowerCase();
+    username = args[0].toLowerCase();
 
     var apiURL = `https://api.worldofwarships.asia/wows/account/list/?application_id=682fc0fd90551e7e6ee67aa0d40e2db8&search=${username}`;
 
