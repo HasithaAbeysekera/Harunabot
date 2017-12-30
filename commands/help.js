@@ -58,9 +58,28 @@ exports.run = (client, message, args) => {
         // .addField(`\u200b`, `**Usage: ** ${prefix}${thisCommand.help.usage}`)
         // .addField(`\u200b`, `**Description - ** ${thisCommand.help.description}`)
         // .addField(`\u200b`, `**Permission Level - ** ${cmdPermlvl[thisCommand.conf.permLevel]}`)
+        .setFooter(`This message will self destruct in 60s, press ❌ to delete`)
         .setTimestamp();
 
-      message.channel.send(embed);
+      message.channel.send(embed).then(msg => {
+        msg.react('❌');
+        // msg.delete();
+
+        // const filter = (reaction, user) => {
+        //   return reaction.emoji.name === ':x:' && user.id === message.author.id;
+        // };
+
+        const collector = msg.createReactionCollector((reaction, user) =>  reaction.emoji.name === '❌' && user.id === message.author.id, {
+          time: 60000}
+        );
+
+        // collector.on('collect', r => console.log(`Collected ${r.emoji.name}`)
+        collector.on('collect', r => msg.delete());
+
+        collector.on('end', r => msg.delete());
+      }).catch((err => {
+        console.log(err.stack);
+      }));
     }
   }
 };
