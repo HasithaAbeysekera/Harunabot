@@ -1,8 +1,5 @@
 const Discord = require("discord.js");
 const prefix = require('../config.json').prefix;
-const commandHelp = require('../util/commandHelp.js');
-const addHelpReaction = require('../util/addHelpReaction.js');
-
 exports.run = (client, message, args) => {
   if (!args[0]) {
     const commandNames = Array.from(client.commands.keys());
@@ -53,10 +50,52 @@ exports.run = (client, message, args) => {
   } else {
     let command = args[0];
     if (client.commands.has(command)) {
-      commandHelp(client, message, message, command)
-    } else {
-      return message.channel.send("Error: incorrect format. Click ❓ for more details").then(msg => {
-        addHelpReaction(client, msg, message, exports.help.name);
+      // command = client.commands.get(command);
+      // message.channel.sendCode('asciidoc', `= ${command.help.name} = \n${command.help.description}\nusage::${command.help.usage}`);
+      const cmdPermlvl = ["Everyone", "Captains", "Admirals", "Owner Only"]
+      let thisCommand = client.commands.get(command);
+      let aliaslist = thisCommand.conf.aliases;
+      if (aliaslist.length == 0) {
+        aliases = "none";
+      } else {
+        aliases = `${prefix}${aliaslist.join(` ${prefix}`)}`;
+      }
+
+      const embed = new Discord.RichEmbed()
+        .setAuthor(`${prefix}${command}`, `${message.author.displayAvatarURL}`)
+        .setTitle(`\u200b`)
+        .setThumbnail(client.user.displayAvatarURL)
+        .setColor(0x00AE86)
+        .addField(`\u200b`, `**Aliases: ** ${aliases}\n` +
+          `**Usage: ** ${prefix}${thisCommand.help.usage}\n` +
+          `**Description - ** ${thisCommand.help.description}\n` +
+          `**Permission Level - ** ${cmdPermlvl[thisCommand.conf.permLevel]}\n`)
+
+        // .addField(`\u200b`, `**Aliases: ** ${aliases}`)
+        // .addField(`\u200b`, `**Usage: ** ${prefix}${thisCommand.help.usage}`)
+        // .addField(`\u200b`, `**Description - ** ${thisCommand.help.description}`)
+        // .addField(`\u200b`, `**Permission Level - ** ${cmdPermlvl[thisCommand.conf.permLevel]}`)
+        .setFooter(`This message will self destruct in 60s, press ❌ to delete`)
+        .setTimestamp();
+
+      message.channel.send(embed).then(msg => {
+        msg.react('❌');
+        // msg.delete();
+
+        // const filter = (reaction, user) => {
+        //   return reaction.emoji.name === ':x:' && user.id === message.author.id;
+        // };
+
+        const collector = msg.createReactionCollector((reaction, user) => reaction.emoji.name === '❌' && user.id === message.author.id, {
+          time: 60000
+        });
+
+        // collector.on('collect', r => console.log(`Collected ${r.emoji.name}`)
+        collector.on('collect', r => msg.delete().then(msg => console.log(`Deleted message from ${msg.author}`))
+          .catch(console.error));
+
+        collector.on('end', r => msg.delete().then(msg => console.log(`Deleted message from ${msg.author}`))
+          .catch(console.error));
       }).catch((err => {
         console.log(err.stack);
       }));

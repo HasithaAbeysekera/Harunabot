@@ -1,10 +1,15 @@
 const Discord = require("discord.js");
 var eightball = require('../assets/8ball.json');
 const farmhash = require('farmhash');
+const addHelpReaction = require('../util/addHelpReaction.js');
 
 exports.run = function(client, message, args) {
   if (!args[0]) {
-    return message.reply("aren't you going to ask a question?");
+    return message.reply("aren't you going to ask a question? If you're having trouble, click ❓ for more details").then(msg => {
+      addHelpReaction(client, msg, message, exports.help.name);
+    }).catch((err => {
+      console.log(err.stack);
+    }));
   }
   // argstring = (Math.floor((Math.random() * 100))).toString();
   argstring = args.join(' ');
@@ -19,11 +24,11 @@ exports.conf = {
   enabled: true,
   guildOnly: false,
   aliases: [''],
-  permLevel: 3
+  permLevel: 0
 };
 
 exports.help = {
   name: '8ball',
   description: 'The Magic 8-ball will tell your fortune',
-  usage: '8ball'
+  usage: '8ball [yes/no question]'
 };
