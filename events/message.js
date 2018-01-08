@@ -6,7 +6,7 @@ module.exports = message => {
   let client = message.client;
   if (message.author.bot) return;
   if (!message.content.startsWith(prefix)) {
-    if (message.content.toLowerCase().includes('press f')) {
+    if (message.content.toLowerCase().includes('press f') || (message.content.toLowerCase().trim() == 'f')) {
       return message.channel.send(`:regional_indicator_f:`);
     }
     if(message.content.toLowerCase().trim() == "rip"){
@@ -15,8 +15,8 @@ module.exports = message => {
     }
     return;
   }
-  let command = message.content.toLowerCase().split(' ')[0].slice(prefix.length);
   let args = message.content.split(' ').slice(1);
+  let command = message.content.toLowerCase().split(' ')[0].slice(prefix.length);
   let argstring = args.join(' ').toLowerCase();
   //  let perms = client.elevation(message);
   let cmd;
