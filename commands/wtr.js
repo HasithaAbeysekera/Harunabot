@@ -1,10 +1,16 @@
 const Discord = require("discord.js");
 const fs = require('fs');
-var validRegions = ["sea", "na", "eu", "ru"];
-var request = require("request");
+let validRegions = ["sea", "na", "eu", "ru"];
+let request = require("request");
+const addHelpReaction = require('../util/addHelpReaction.js');
 exports.run = function(client, message, args) {
   if (!args[0] || message.mentions.users.first()) { //!args[1]
-    return message.channel.send("Invalid input, use the help commands for more details");
+    return message.channel.send("Invalid input, click ❓ for more details").then(msg => {
+      addHelpReaction(client, msg, message, exports.help.name);
+    }).catch((err => {
+      console.log(err.stack);
+    }));
+    // return addHelpReaction(msg);
   } else {
 
     username = args[0].toLowerCase();
