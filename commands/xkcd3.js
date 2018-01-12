@@ -2,26 +2,22 @@ const Discord = require("discord.js");
 const addHelpReaction = require('../util/addHelpReaction.js');
 const ordinal = require('../util/ordinal.js');
 const xkcdGet = require('../util/xkcdGet.js');
-const xkcdGet2 = require('../util/xkcdGet2.js');
+let request = require("request");
 let months = ["", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
 exports.run = function(client, message, args) {
-  if (!args[0] || args[0] == "newest") {
-    message.channel.send("newest");
-    return xkcdGet2(message, 0);
+  if (!args[0]) {
+    message.channel.send("random, no args");
+    let apiURL = `https://xkcd.com/info.0.json`;
   } else if (args[0] == "random" || args[0] == "r") {
     message.channel.send("random");
-    return xkcdGet(message, 0);
-  } else if (parseInt(args[0]) < 1 || args[0] == "0") {
-    return message.channel.send(`Error: number cannot be less than 1`);
+    message.channel.send(`random number: ${limit}`);
   } else if (parseInt(args[0])) {
-    return xkcdGet(message, parseInt(args[0]));
-  } else {
+    message.channel.send(`parsed: ${parseInt(args[0])}`);
+  } else{
     return message.channel.send("error");
   }
 };
-
-  //  message.channel.send("Please wait while I grab the comic....");
 
 exports.conf = {
   enabled: true,
@@ -31,7 +27,7 @@ exports.conf = {
 };
 
 exports.help = {
-  name: 'xkcd',
+  name: 'xkcd3',
   description: 'Posts the latest XKCD comic',
   usage: 'xkcd [username]'
 };
