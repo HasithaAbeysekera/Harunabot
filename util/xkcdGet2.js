@@ -8,11 +8,7 @@ Get user object when given a targetUser string
 */
 // let request = require("request");
 module.exports = (client, message, issue) => {
-  if (issue > 0) {
     url = `https://xkcd.com/${issue}/info.0.json`;
-  } else {
-    url = `https://xkcd.com/info.0.json`;
-  }
   let body;
   let xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function() {
