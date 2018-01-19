@@ -28,8 +28,6 @@ exports.run = function(client, message, args) {
   }
 };
 
-  //  message.channel.send("Please wait while I grab the comic....");
-
 exports.conf = {
   enabled: true,
   guildOnly: false,
