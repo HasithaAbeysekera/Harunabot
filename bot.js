@@ -8,7 +8,7 @@ const ownerid = require("./config.json").ownerid;
 const modrolename = require("./config.json").modrolename;
 const adminrolename = require("./config.json").adminrolename;
 const avatarTimer = require("./config.json").avatarTimer
-var changeAvatar = require ('./util/changeAvatar.js');
+let changeAvatar = require ('./util/changeAvatar.js');
 const dir = './assets/avatars/';
 require('./util/EventLoader')(client);
 

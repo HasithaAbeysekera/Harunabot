@@ -1,6 +1,6 @@
 const ms = require('ms');
 const Discord = require("discord.js");
-var getGuildMember = require('../util/getGuildMember.js');
+let getGuildMember = require('../util/getGuildMember.js');
 const silencedRole = require('../config.json').silencedrole;
 exports.run = (client, message, args) => {
   return message.channel.send("Sorry, this command is still in development");

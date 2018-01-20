@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-var assets = require('../assets/assets.json');
+let assets = require('../assets/assets.json');
 /*
 Get user object when given a targetUser string
 */

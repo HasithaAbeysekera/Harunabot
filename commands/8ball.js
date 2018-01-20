@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-var eightball = require('../assets/8ball.json');
+let eightball = require('../assets/8ball.json');
 const farmhash = require('farmhash');
 const addHelpReaction = require('../util/addHelpReaction.js');
 

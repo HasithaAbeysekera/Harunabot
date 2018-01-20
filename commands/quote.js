@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-var quotes = require('../assets/quotes.json');
+let quotes = require('../assets/quotes.json');
 
 exports.run = function(client, message, args) {
 

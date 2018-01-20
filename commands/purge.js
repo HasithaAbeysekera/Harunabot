@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const prefix = require('../config.json').prefix;
-var getUser = require('../util/getUser.js');
+let getUser = require('../util/getUser.js');
 const addHelpReaction = require('../util/addHelpReaction.js');
 
 exports.run = (client, message, args) => {
