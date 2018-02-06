@@ -7,7 +7,7 @@ let allowedChannels = [222658565075107840, 250882784439042048];
 exports.run = function(client, message, args) {
   //if (!(message.channel.id == 222658565075107840 || message.channel.id == 250882784439042048 || message.channel.id == 376020514252259338)){
   if (message.guild && !(message.channel.id == 273308045399031808 || message.channel.id == 397123949156106241 || message.channel.id == 376018371730341888 || message.channel.id == 391084554405806080)){
-    return message.channel.send(`Please use #bot-spam or #scoreboard_posts for -wtr`);
+    return message.channel.send(`Please use <#397123949156106241> or #scoreboard_posts for -wtr`);
   }
   else if (!args[0] || message.mentions.users.first()) { //!args[1]
     return message.channel.send("Invalid input, click ❓ for more details").then(msg => {
