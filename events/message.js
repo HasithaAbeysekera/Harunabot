@@ -8,12 +8,12 @@ module.exports = message => {
   if (!message.content.startsWith(prefix)) {
     if (message.content.toLowerCase().includes('press f') || (message.content.toLowerCase().trim() == 'f')) {
       return message.channel.send(`:regional_indicator_f:`);
-    }
-    if(message.content.toLowerCase().trim() == "rip"){
+    } else if (message.content.toLowerCase().trim() == "rip") {
       return RipReaction(message);
       // return message.channel.send(`test rip`);
+    } else {
+      return;
     }
-    return;
   }
   let args = message.content.split(' ').slice(1);
   let command = message.content.toLowerCase().split(' ')[0].slice(prefix.length);
