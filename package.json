@@ -13,6 +13,7 @@
     "farmhash": "^2.0.4",
     "ffmpeg-binaries": "^3.2.2-3",
     "moment": "^2.19.4",
+    "moment-timezone": "^0.5.14",
     "ms": "^1.0.0",
     "request": "^2.81.0",
     "request-promise": "^4.2.1",
