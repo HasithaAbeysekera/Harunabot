@@ -8,8 +8,7 @@ let timeSG = moment().tz("Asia/Singapore").format('HH:mm');
 let timeINDIA = moment().tz("Asia/Kolkata").format('HH:mm');
 let timeINDO = moment().tz("Asia/Jakarta").format('HH:mm');
 let timeSA = moment().tz("Australia/Adelaide").format('HH:mm');
-let timeNSW = moment().tz("Australia/Sydney").format('HH:mm');
-let timeQLD = moment().tz("Australia/Brisbane").format('HH:mm');
+let timeMELB = moment().tz("Australia/Melbourne").format('HH:mm');
 
 
 return message.channel.send(`It is currently:\n\n` +
@@ -17,15 +16,14 @@ return message.channel.send(`It is currently:\n\n` +
   `${timeSG} in Singapore/HK/Philippines\n` +
   `${timeINDO} in Indonesia\n` +
   `${timeSA} in South Australia\n` +
-  `${timeNSW} in Sydney\n` +
-  `${timeQLD} in Brisbane`);
+  `${timeMELB} in Melbourne`);
 };
 
 exports.conf = {
   enabled: true,
   guildOnly: false,
   aliases: [],
-  permLevel: 3
+  permLevel: 0
 };
 
 exports.help = {
