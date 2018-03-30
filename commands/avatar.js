@@ -12,6 +12,8 @@ exports.run = function(client, message, args) {
     target = message.mentions.users.first();
     message.channel.send(`${target}'s avatar is:`);
     return message.channel.send(new Discord.Attachment(target.displayAvatarURL, 'avatar.jpg'));
+  } else if (args[0] == 'server') {
+    return message.channel.send(new Discord.Attachment(message.guild.iconURL, 'server.jpg'));
   } else {
     return message.channel.send("Error: incorrect format. Click ❓ for more details").then(msg => {
       addHelpReaction(client, msg, message, exports.help.name);

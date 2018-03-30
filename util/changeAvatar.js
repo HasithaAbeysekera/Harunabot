@@ -1,6 +1,3 @@
-/*
-Get user object when given a targetUser string
-*/
 const fs = require('fs');
 const dir = './assets/avatars/';
 module.exports = (client) => {

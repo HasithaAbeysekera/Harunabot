@@ -9,6 +9,7 @@ const modrolename = require("./config.json").modrolename;
 const adminrolename = require("./config.json").adminrolename;
 const avatarTimer = require("./config.json").avatarTimer
 let changeAvatar = require ('./util/changeAvatar.js');
+var nick = require ('./util/nick.js');
 const dir = './assets/avatars/';
 require('./util/EventLoader')(client);
 
@@ -70,7 +71,12 @@ client.elevation = message => {
    changeAvatar(client);
 };
 
+function changeN() {
+  nick(client);
+};
+
 client.setInterval(changeA, 1000 * 60 * avatarTimer);
+//client.setInterval(changeN, 1000 * 60 * 5);
 
 process.on("unhandledRejection", err => {
   console.error("Uncaught Promise Error: \n" + err.stack);
