@@ -76,7 +76,7 @@ function changeN() {
 };
 
 client.setInterval(changeA, 1000 * 60 * avatarTimer);
-//client.setInterval(changeN, 1000 * 60 * 5);
+client.setInterval(changeN, 1000 * 60 * 5);
 
 process.on("unhandledRejection", err => {
   console.error("Uncaught Promise Error: \n" + err.stack);

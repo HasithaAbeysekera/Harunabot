@@ -1,7 +1,6 @@
 exports.run = function(client, message, args) {
   let channels = message.guild.channels.array();
   for (i = 0; i < channels.length; i++) {
-    message.channel.send(`${channels[i]}: ${channels[i].id}`);
     if (channels[i].id == 273307823432269825) { //general
       channels[i].setName('J̶u͜͟͞s̢t ́H҉a̵ru̸͜͡n̴҉a̢');
     } else if (channels[i].id == 273308113027858443) { //annoucements
