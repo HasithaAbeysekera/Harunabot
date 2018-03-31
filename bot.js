@@ -13,10 +13,6 @@ var nick = require ('./util/nick.js');
 const dir = './assets/avatars/';
 require('./util/EventLoader')(client);
 
-const Enmap = require('enmap');
-const EnmapLevel = require('enmap-level');
-client.contestData = new Enmap({ provider: new EnmapLevel({ name: 'contestData' }) });
-
 const log = message => {
   console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] ${message}`);
 };
