@@ -10,6 +10,8 @@
   "license": "MIT",
   "dependencies": {
     "discord.js": "^11.2.1",
+    "enmap": "^2.0.1",
+    "enmap-level": "^2.0.0",
     "farmhash": "^2.0.4",
     "ffmpeg-binaries": "^3.2.2-3",
     "jimp": "^0.2.28",

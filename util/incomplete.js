@@ -1,5 +1,4 @@
-const fs = require('fs');
-let contestData = JSON.parse(fs.readFileSync('./assets/missions/playerData.json', 'utf8'));
+
 module.exports = (target, mission, message, client) => {
 
   let id = target.id;
@@ -10,9 +9,9 @@ module.exports = (target, mission, message, client) => {
       return message.channel.send(`That mission hasn't been completed, make sure you entered the right one.`);
     }
     contestData[id][mission-1] = 0;
-    fs.writeFile('./assets/missions/playerData.json', JSON.stringify(contestData), function(err) {
+    return fs.writeFile('./assets/missions/playerData.json', JSON.stringify(contestData), function(err) {
       if (err) throw err;
-    });
+    }).then(message.channel.send(`sent incompelte`));
   return message.channel.send(`changed array: ${contestData[`${id}`]}`);
   }
   return;

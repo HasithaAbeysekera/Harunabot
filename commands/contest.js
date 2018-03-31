@@ -11,6 +11,8 @@ exports.run = function(client, message, args) {
     //create card for new player, check player isn't already in contest
   } else if (args[0].toLowerCase() === 'card') {
     //displays progress card
+  } else if (args[0].toLowerCase() === 'deleteall') {
+    //displays progress card
   } else if (args[0].toLowerCase() === 'missions') {
     //displays missions
   } else if (args[0].toLowerCase() === 'complete') {
