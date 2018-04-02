@@ -16,6 +16,6 @@ exports.conf = {
 
 exports.help = {
   name: 'reset',
-  description: 'April fools',
-  usage: 'nick'
+  description: 'Deletes all nicknames',
+  usage: 'reset'
 };
