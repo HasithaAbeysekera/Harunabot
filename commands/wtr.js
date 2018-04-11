@@ -5,7 +5,7 @@ let request = require("request");
 const addHelpReaction = require('../util/addHelpReaction.js');
 let allowedChannels = [222658565075107840, 250882784439042048];
 exports.run = function(client, message, args) {
-  else if (!args[0] || message.mentions.users.first()) { //!args[1]
+  if (!args[0] || message.mentions.users.first()) { //!args[1]
     return message.channel.send("Invalid input, click ❓ for more details").then(msg => {
       addHelpReaction(client, msg, message, exports.help.name);
     }).catch((err => {
