@@ -8,6 +8,7 @@ const ownerid = require("./config.json").ownerid;
 const memberrolename = require("./config.json").memberrolename;
 const captainrolename = require("./config.json").captainrolename;
 const adminrolename = require("./config.json").adminrolename;
+const admin2rolename = require("./config.json").admin2rolename;
 const avatarTimer = require("./config.json").avatarTimer
 let changeAvatar = require ('./util/changeAvatar.js');
 const dir = './assets/avatars/';

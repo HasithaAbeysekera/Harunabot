@@ -10,10 +10,12 @@ exports.run = function(client, message, args) {
       clanRole = message.guild.roles.find(u => u.name == 'SEAS');
       message.member.addRole(clanRole);
       message.member.addRole(LineOfficersRole);
+      return message.channel.send(`${message.user}, you've been added to SEAS!`)
     } else if (args[0].toLowerCase() == 'uksdf') {
       clanRole = message.guild.roles.find(u => u.name == 'UKSDF');
       message.member.addRole(clanRole);
       message.member.addRole(LineOfficersRole);
+      return message.channel.send(`${message.user}, you've been added to UKSDF!`)
     } else {
       return message.channel.send(`Error, please try again`);
     }
