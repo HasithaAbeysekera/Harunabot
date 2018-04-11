@@ -80,7 +80,7 @@ exports.conf = {
   enabled: true,
   guildOnly: true,
   aliases: ['silence'],
-  permLevel: 2
+  permLevel: 4
 };
 
 exports.help = {

@@ -23,9 +23,9 @@ exports.run = (client, message, args) => {
 
 exports.conf = {
   enabled: true,
-  guildOnly: false,
+  guildOnly: true,
   aliases: ['r'],
-  permLevel: 3
+  permLevel: 4
 };
 
 exports.help = {

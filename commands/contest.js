@@ -43,13 +43,13 @@ exports.run = function(client, message, args) {
 
 exports.conf = {
   enabled: true,
-  guildOnly: false,
+  guildOnly: true,
   aliases: [],
-  permLevel: 3
+  permLevel: 4
 };
 
 exports.help = {
   name: 'contest',
   description: 'Commands for contests (WIP)',
-  usage: ''
+  usage: 'contest'
 };

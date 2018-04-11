@@ -17,5 +17,4 @@ module.exports = (target, mission, message, client) => {
     return message.channel.send(`changed array: ${contestData[`${id}`]}`);
   }
   return;
-
 };

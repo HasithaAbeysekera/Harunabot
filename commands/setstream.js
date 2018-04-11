@@ -10,7 +10,7 @@ exports.conf = {
   enabled: true,
   guildOnly: false,
   aliases: ['stream'],
-  permLevel: 3
+  permLevel: 4
 };
 
 exports.help = {

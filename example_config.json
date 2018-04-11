@@ -4,8 +4,10 @@
   "ownerid": "bot owner's user id here",
   "defaultChannel": "defaultChannel id here, this is the channel that will display the dsay command",
   "logChannel": "logChannel id, this channel will be used for the member joining and leaving event messages",
-  "modrolename": "ModeratorRoleNameHere",
+  "memberrolename": "MemberRoleNameHere",
+  "captainrolename": "CaptainRoleNameHere",
   "adminrolename": "AdminRoleNameHere",
+  "admin2rolename" : "Admin2RoleNameHere",
   "silencedrole": "SilencedRoleNameHere",
   "avatarTimer": "time in minutes for avatar change function"
 }

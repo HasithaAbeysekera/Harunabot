@@ -5,7 +5,8 @@ const client = new Discord.Client();
 const token = require("./config.json").token;
 const prefix = require("./config.json").prefix;
 const ownerid = require("./config.json").ownerid;
-const modrolename = require("./config.json").modrolename;
+const memberrolename = require("./config.json").memberrolename;
+const captainrolename = require("./config.json").captainrolename;
 const adminrolename = require("./config.json").adminrolename;
 const avatarTimer = require("./config.json").avatarTimer
 let changeAvatar = require ('./util/changeAvatar.js');
@@ -57,11 +58,15 @@ client.elevation = message => {
   /* This function should resolve to an ELEVATION level which
      is then sent to the command handler for verification*/
   let permlvl = 0;
-  let mod_role = message.guild.roles.find('name', modrolename);
-  if (mod_role && message.member.roles.has(mod_role.id)) permlvl = 1;
+  let member_role = message.guild.roles.find('name', memberrolename);
+  if (member_role && message.member.roles.has(member_role.id)) permlvl = 1;
+  let captain_role = message.guild.roles.find('name', captainrolename);
+  if (captain_role && message.member.roles.has(captain_role.id)) permlvl = 2;
   let admin_role = message.guild.roles.find('name', adminrolename);
-  if (admin_role && message.member.roles.has(admin_role.id)) permlvl = 2;
-  if (message.author.id == ownerid) permlvl = 3;
+  if (admin_role && message.member.roles.has(admin_role.id)) permlvl = 3;
+  let admin2_role = message.guild.roles.find('name', admin2rolename);
+  if (admin2_role && message.member.roles.has(admin2_role.id)) permlvl = 3;
+  if (message.author.id == ownerid) permlvl = 4;
   return permlvl;
 };
 

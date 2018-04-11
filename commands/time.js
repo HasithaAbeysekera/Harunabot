@@ -11,7 +11,6 @@ exports.run = function(client, message, args) {
     let timeSA = moment().tz("Australia/Adelaide").format('HH:mm');
     let timeMELB = moment().tz("Australia/Melbourne").format('HH:mm');
 
-
     return message.channel.send(`It is currently:\n\n` +
       `${timeINDIA} in India\n` +
       `${timeINDO} in Indonesia\n` +
@@ -19,7 +18,6 @@ exports.run = function(client, message, args) {
       `${timeSA} in South Australia\n` +
       `${timeMELB} in Melbourne`);
   }
-
 };
 
 exports.conf = {
