@@ -1,6 +1,9 @@
 const defaultChannelID = require("../config.json").defaultChannel;
 
 exports.run = function(client, message, args) {
+  if(!args[0]){
+    return message.channel.send(`Error: message cannot be empty.`);
+  }
   if (message.mentions.channels.first()) {
     channelToSend = message.mentions.channels.first();
     if(channelToSend != args[0]){

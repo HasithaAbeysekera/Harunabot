@@ -1,5 +1,8 @@
 exports.run = function(client, message, args) {
   // message.channel.send(`clean: ${message.cleanContent}`);
+  if(!args[0]){
+    return message.channel.send(`Error: message can't be empty`);
+  }
   if (message.cleanContent.includes("@​everyone") || message.cleanContent.includes("@​here")) {
     if (!message.member.hasPermission("MENTION_EVERYONE")) {
       return message.channel.send("Please don't use me for `@everyone` or `@here` pings");

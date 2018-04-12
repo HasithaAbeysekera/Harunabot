@@ -2,7 +2,13 @@ const Discord = require("discord.js");
 let assets = require('../assets/assets.json');
 
 exports.run = function(client, message, args) {
+  if (!args[0]) {
+    return message.channel.send(`Error, please try again`);
+  }
   LineOfficersRole = message.guild.roles.find(u => u.name == 'Line Officers');
+  if (!args[0]) {
+    return message.channel.send(`Error, please try again`);
+  }
   if (message.member.roles.find(u => u.name == 'Line Officers')) {
     return message.channel.send(`You're already in a clan`);
   } else {
