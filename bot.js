@@ -15,12 +15,6 @@ const dir = './assets/avatars/';
 
 //for contests
 
-const Enmap = require('enmap');
-const EnmapLevel = require('enmap-level');
-const tableSource = new EnmapLevel({name: "teamBisko"});
-const teamBisko = new Enmap({provider: tableSource});
-
-
 
 require('./util/EventLoader')(client);
 
