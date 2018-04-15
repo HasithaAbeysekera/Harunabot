@@ -1,23 +1,18 @@
-const fs = require('fs');
-const bgdir = './assets/missions/bgs/';
-// let contestData = JSON.parse(fs.readFileSync('./assets/missions/playerData.json', 'utf8'));
-
-
 module.exports = (message, client) => {
 
-
-/*
-
-  message.channel.send(`folder size: ${bgFolderSize}`);
-  if (contestData[id]) {
+  let teamHaruna = message.guild.roles.find(u => u.name == 'Team Haruna');
+  let teamBismarck = message.guild.roles.find(u => u.name == 'Team Bismarck');
+  if (message.member.roles.find(u => u.name == 'Team Haruna') || message.member.roles.find(u => u.name == 'Team Bismarck')) {
+    return message.channel.send(`Error: you are already participating`);
   } else {
-    contestData[id] = data;
-    fs.writeFile('./assets/missions/playerData.json', JSON.stringify(contestData), function(err) {
-      if (err) throw err;
-    });
+    let rand = Math.floor(Math.random() * 2);
+    if (rand == 0) {
+      message.member.addRole(teamHaruna);
+      return message.channel.send(`${message.author} has joined Team Haruna!`);
+    } else {
+      message.member.addRole(teamBismarck);
+      return message.channel.send(`${message.author} has joined Team Bismarck!`);
+    }
   }
-return   message.channel.send(`first array: ${contestData[`${id}`]}`);
-*/
-  // client.contestData.set("foo", "bar");
-  // return message.channel.send(`check: ${client.contestData.get("foo")}`);
-};
+  return;
+}

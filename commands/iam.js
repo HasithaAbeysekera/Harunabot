@@ -5,7 +5,7 @@ exports.run = function(client, message, args) {
   if (!args[0]) {
     return message.channel.send(`Error, please try again`);
   }
-  LineOfficersRole = message.guild.roles.find(u => u.name == 'Line Officers');
+  let LineOfficersRole = message.guild.roles.find(u => u.name == 'Line Officers');
   if (!args[0]) {
     return message.channel.send(`Error, please try again`);
   }
