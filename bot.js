@@ -12,13 +12,8 @@ const admin2rolename = require("./config.json").admin2rolename;
 const avatarTimer = require("./config.json").avatarTimer
 let changeAvatar = require ('./util/changeAvatar.js');
 const dir = './assets/avatars/';
-const Enmap = require('enmap');
-const EnmapLevel = require('enmap-level');
 
 //for contests
-const tableSource = new EnmapLevel({name: "myTable"});
-client.HarunaTeam = new Enmap({provider: tableSource});
-
 require('./util/EventLoader')(client);
 
 const log = message => {
