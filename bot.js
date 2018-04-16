@@ -12,9 +12,14 @@ const admin2rolename = require("./config.json").admin2rolename;
 const avatarTimer = require("./config.json").avatarTimer
 let changeAvatar = require ('./util/changeAvatar.js');
 const dir = './assets/avatars/';
+const Enmap = require('enmap');
+const EnmapLevel = require('enmap-level');
+require('./util/EventLoader')(client);
 
 //for contests
-require('./util/EventLoader')(client);
+const provider = new EnmapLevel({name: "HarunaTeam"});
+client.HarunaTeam = new Enmap({provider: provider});
+
 
 const log = message => {
   console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] ${message}`);
