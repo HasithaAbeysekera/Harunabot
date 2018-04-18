@@ -11,7 +11,7 @@ module.exports = (message, client, args, team) => {
       return message.channel.send(`Error: please input points to add`);
     }
     pointsToAdd = parseInt(args[2]);
-    if (!team.get(userToAdd)) {
+    if (!team.get(`${userToAdd}`)) {
       return message.channel.send(`Error: invalid user`);
     }
     let newPoints = parseInt(team.get(userToAdd) + pointsToAdd);
