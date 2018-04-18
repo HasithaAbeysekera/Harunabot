@@ -1,12 +1,17 @@
 const Discord = require("discord.js");
 
 module.exports = (message, client, team) => {
-
+if (team == client.teamBismarck){
+  embedThumbnail = 'https://i.imgur.com/u725OKI.png';
+} else {
+  embedThumbnail = client.user.displayAvatarURL;
+}
 
   const teamEmbed = new Discord.RichEmbed()
     .setAuthor(`\u200b`, `${message.author.displayAvatarURL}`)
     .setTitle(`Team Haruna`)
-    .setThumbnail(client.user.displayAvatarURL)
+    // .setThumbnail(client.user.displayAvatarURL)
+    .setThumbnail(embedThumbnail)
     .setColor(0x00AE86)
     .setFooter(`test`, '')
     .setTimestamp();
