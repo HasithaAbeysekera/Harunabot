@@ -17,9 +17,9 @@ module.exports = (message, client, team) => {
   // for (i = 0; i < teamSize; i++) {
   //   console.log(team.array());
   // }
-  for (var [key, value] of team.entries()) {
+  for ( var [key, value] of team.entries()) {
     let thisMember = message.guild.members.find(u => u.id == key);
     teamEmbed.addField(`${thisMember.user.username} - ${value}`, "\u200b", true);
-    return message.channel.send(teamEmbed);
   }
+  return message.channel.send(teamEmbed);
 };
