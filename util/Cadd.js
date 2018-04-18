@@ -14,7 +14,8 @@ module.exports = (message, client, args, team) => {
     if (!team.get(userToAdd)) {
       return message.channel.send(`Error: invalid user`);
     }
-    team.get(userToAdd) = team.get(userToAdd) + pointsToAdd;
-    return message.channel.send(`Added ${pointsToAdd} points to ${message.guild.members.find(u => u.id == userToAdd)}. Total points:${team.get(userToAdd)}`);
+    let newPoints= team.get(userToAdd) + pointsToAdd;
+    team.set(userToAdd, newPoints);
+    return message.channel.send(`Added ${pointsToAdd} points to ${message.guild.members.find(u => u.id == userToAdd)}. Total points:${newPoints}`);
   }
 };
