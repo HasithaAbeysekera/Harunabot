@@ -1,6 +1,6 @@
 const Cjoin = require('../util/join.js');
 const Cteams = require('../util/Cteams.js');
-
+const Cadd = require('../util/Cadd.js');
 
 exports.run = function(client, message, args) {
   if (!args[0]) { //no arguments
