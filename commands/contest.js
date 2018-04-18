@@ -16,9 +16,9 @@ exports.run = function(client, message, args) {
   } else if (args[0].toLowerCase() === 'add') {
     // if()//filter roles or individuals{}
     if (message.channel.id == 435849317706891284) { //teamharuna
-      return Cadd(message, client, client.teamHaruna);
+      return Cadd(message, client, args, client.teamHaruna);
     } else if (message.channel.id == 435849356013338625) { //teambismarck
-      return Cadd(message, client, client.teamBismarck);
+      return Cadd(message, client, args, client.teamBismarck);
     } else {
       return message.channel.send(`Error: This command cannot be used in this channel`);
     }

@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 
-module.exports = (message, client, team) => {
+module.exports = (message, client, args, team) => {
   if (!args[1] || !message.mentions.users.first()) {
     return message.channel.send(`Error: no user mentionned`);
   } else {
