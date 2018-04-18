@@ -1,19 +1,25 @@
 const Discord = require("discord.js");
 
 module.exports = (message, client, team) => {
-  const Haruna = new Discord.RichEmbed()
+
+
+  const teamEmbed = new Discord.RichEmbed()
     .setAuthor(`\u200b`, `${message.author.displayAvatarURL}`)
     .setTitle(`Team Haruna`)
     .setThumbnail(client.user.displayAvatarURL)
     .setColor(0x00AE86)
     .setFooter(`test`, '')
     .setTimestamp();
-  teamSize = client.HarunaTeam.array().length;
+  teamSize = team.array().length;
   console.log(`Team Haruna ${teamSize}`);
   // message.channel.send(client.haruna.array());
 
-  for (i = 0; i < teamSize; i++) {
-    console.log(client.HarunaTeam.array());
+  // for (i = 0; i < teamSize; i++) {
+  //   console.log(team.array());
+  // }
+  for (var [key, value] of team.entries()) {
+    let thisMember = message.guild.members.find(u => u.id == key);
+    teamEmbed.addField(`${thisMember.user.username} - ${value}`, "\u200b", true);
+    return message.channel.send(teamEmbed);
   }
-  return message.channel.send(Haruna);
-}
+};

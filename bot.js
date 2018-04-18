@@ -17,8 +17,10 @@ const EnmapLevel = require('enmap-level');
 require('./util/EventLoader')(client);
 
 //for contests
-const provider = new EnmapLevel({name: "HarunaTeam"});
-client.HarunaTeam = new Enmap({provider: provider});
+const provider = new EnmapLevel({name: "teamHaruna"});
+client.teamHaruna = new Enmap({provider: provider});
+const provider2 = new EnmapLevel({name: "teamBismarck"});
+client.teamBismarck = new Enmap({provider: provider2});
 
 
 const log = message => {
