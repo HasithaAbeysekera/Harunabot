@@ -7,7 +7,7 @@ module.exports = (message, client, args, team) => {
     let userToAdd = message.mentions.users.first().id;
     if (!args[2]) {
       return message.channel.send(`Error: please input points to add`);
-    } else if (parseInt(args[2])) {
+    } else if (!parseInt(args[2])) {
       return message.channel.send(`Error: please input points to add`);
     }
     pointsToAdd = parseInt(args[2]);
