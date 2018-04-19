@@ -18,18 +18,19 @@ exports.run = function(client, message, args) {
   } else if (args[0].toLowerCase() === 'myscore') {
     return Cscore(message, client);
   } else if (args[0].toLowerCase() === 'add') {
-    // if()//filter roles or individuals{}
-    if (message.channel.id == 435849317706891284) { //teamharuna
-      return Cadd(message, client, args, client.teamHaruna);
-    } else if (message.channel.id == 435849356013338625) { //teambismarck
-      return Cadd(message, client, args, client.teamBismarck);
+    if (!message.member.roles.find(u => u.name == 'Contest Moderator')) {
+      return message.channel.send("Only a Contest Moderator can use this command");
     } else {
-      return message.channel.send(`Error: This command cannot be used in this channel`);
+      if (message.channel.id == 435849317706891284) { //teamharuna
+        return Cadd(message, client, args, client.teamHaruna);
+      } else if (message.channel.id == 435849356013338625) { //teambismarck
+        return Cadd(message, client, args, client.teamBismarck);
+      } else {
+        return message.channel.send(`Error: This command cannot be used in this channel`);
+      }
     }
   } else if (args[0].toLowerCase() === 'totals') {
     return Cteamtotals(message, client);
-  } else if (args[0].toLowerCase() === 'incomplete') {
-
   }
   return message.channel.send('Error: unrecognised arguments');
 };

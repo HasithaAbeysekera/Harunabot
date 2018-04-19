@@ -1,12 +1,15 @@
 const Discord = require("discord.js");
+const Cteamtotal = require('../util/Cteamtotal.js');
 
 module.exports = (message, client, team) => {
 if (team == client.teamBismarck){
   embedThumbnail = 'https://i.imgur.com/u725OKI.png';
   embedTitle = 'Team Bismarck';
+  embedFooter = Cteamtotal(message, client, client.teamBismarck);
 } else {
   embedThumbnail = client.user.displayAvatarURL;
   embedTitle = 'Team Haruna';
+  embedFooter = Cteamtotal(message, client, client.teamHaruna);
 }
 
   const teamEmbed = new Discord.RichEmbed()
@@ -15,7 +18,7 @@ if (team == client.teamBismarck){
     // .setThumbnail(client.user.displayAvatarURL)
     .setThumbnail(embedThumbnail)
     .setColor(0x00AE86)
-    // .setFooter(`test`, '')
+    .setFooter(`Team Total: ${embedFooter}`, '')
     .addField("\u200b", "\u200b", false)
     .setTimestamp();
   teamSize = team.array().length;
