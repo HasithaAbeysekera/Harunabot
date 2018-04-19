@@ -4,7 +4,7 @@ module.exports = (message, client, team) => {
 
   let total = 0;
   for (var [key, value] of team) {
-    total = total + value;
+    total = total + ParseInt(value);
   }
   return total;
 };

@@ -23,7 +23,7 @@ if (team == client.teamBismarck){
 
   for ( var [key, value] of team.entries()) {
     let thisMember = message.guild.members.find(u => u.id == key);
-    teamEmbed.addField(`${thisMember.user.username} - ${value}`, "\u200b", true);
+    teamEmbed.addField(`${thisMember.user.username} - ${ParseInt(value)}`, "\u200b", true);
   }
   return message.channel.send(teamEmbed);
 };
