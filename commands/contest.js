@@ -5,6 +5,7 @@ const Cadd = require('../util/Cadd.js');
 const Cscore = require('../util/Cscore.js');
 const Cteamtotals = require('../util/Cteamtotals.js');
 const Cteamtotal = require('../util/Cteamtotal.js');
+const Cremove = require('../util/Cremove.js');
 
 
 exports.run = function(client, message, args) {
@@ -34,6 +35,8 @@ exports.run = function(client, message, args) {
     }
   } else if (args[0].toLowerCase() === 'totals') {
     return Cteamtotals(message, client);
+  } else if (args[0].toLowerCase() === 'remove') {
+    return Cremove(message, client);
   }
   return message.channel.send('Error: unrecognised arguments');
 };
