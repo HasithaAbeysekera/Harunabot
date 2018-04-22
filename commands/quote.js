@@ -17,6 +17,6 @@ exports.conf = {
 
 exports.help = {
   name: 'quote',
-  description: 'A collection SEAS Quotes',
+  description: 'A collection of Quotes',
   usage: 'quote'
 };
