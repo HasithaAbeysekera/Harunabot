@@ -2,8 +2,8 @@ const ms = require('ms');
 const Discord = require("discord.js");
 let getGuildMember = require('../util/getGuildMember.js');
 const silencedRole = require('../config.json').silencedrole;
+let assets = require('../assets/assets.json');
 exports.run = (client, message, args) => {
-  return message.channel.send("Sorry, this command is still in development");
   let silenced = message.guild.roles.find(u => u.name == silencedRole);
   if (!silenced) {
     message.guild.createRole({
@@ -35,9 +35,15 @@ exports.run = (client, message, args) => {
         console.log(error);
       });
     } else {
-      let target = getGuildMember(message, user);
+      let target = message.mentions.members.first();
       target.addRole(silenced).then(() => {
-        message.channel.send(`${target.user} has been muted for ${ms(ms(time), { long:true })}`).then(() => {
+        // message.channel.send(`${target.user} has been muted for ${ms(ms(time), { long:true })}`, {
+        message.channel.send(`${target.user} has been muted for ${ms(ms(time), { long:true })}`, {
+          files: [{
+            attachment: assets["muted"],
+            name: 'muted.gif'
+          }]
+        }).then(() => {
           client.lockit[target.id] = setTimeout(() => {
             target.removeRole(silenced).then(message.channel.send('Lockdown lifted.')).catch(console.error);
             delete client.lockit[target.id];
