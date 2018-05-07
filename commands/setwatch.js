@@ -2,7 +2,7 @@ exports.run = function(client, message, args) {
   client.user.setPresence({
     game: {
       name: args.join(" "),
-      url: "https://www.twitch.tv/holo_thewise"
+      type: "WATCHING"
     }
   }).then().catch(console.error);
 };
@@ -10,12 +10,12 @@ exports.run = function(client, message, args) {
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ['stream'],
+  aliases: ['watching'],
   permLevel: 4
 };
 
 exports.help = {
-  name: 'setstream',
-  description: 'Change Haruna\'s status to streaming [streamtitle]',
+  name: 'setwatch',
+  description: 'Change Haruna\'s status to watching [streamtitle]',
   usage: 'setstream [streamtitle]'
 };
