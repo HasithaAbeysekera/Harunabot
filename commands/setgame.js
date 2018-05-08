@@ -16,6 +16,6 @@ exports.conf = {
 
 exports.help = {
   name: 'setgame',
-  description: 'Set Haruna\'s status. eg: setgame CSGO will display "Playing CSGO"',
+  description: 'Set Haruna\'s status.',
   usage: 'setgame [game]'
 };

@@ -16,6 +16,6 @@ exports.conf = {
 
 exports.help = {
   name: 'setlisten',
-  description: 'Change Haruna\'s status to watching [streamtitle]',
-  usage: 'setstream [streamtitle]'
+  description: 'Change Haruna\'s status to listening to [something]',
+  usage: 'setlisten [something]'
 };
