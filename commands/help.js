@@ -7,7 +7,7 @@ exports.run = (client, message, args) => {
   if (!args[0]) {
     const commandNames = Array.from(client.commands.keys());
     const longest = commandNames.reduce((long, str) => Math.max(long, str.length), 0);
-    // message.channel.sendCode('asciidoc', `Haruna's Command List\n\n[Use ${prefix}help <commandname> for details]\n\n${client.commands.map(c => `${prefix}${c.help.name}${' '.repeat(longest - c.help.name.length)} :: ${c.help.description}`).join('\n')}`);
+
     const embed = new Discord.RichEmbed()
       .setAuthor(`\u200b`, `${message.author.displayAvatarURL}`)
       .setTitle(`Haruna\'s Commands List`)
@@ -26,8 +26,6 @@ exports.run = (client, message, args) => {
       .setFooter(`For more information type ${prefix}help [commandname]`, '')
       .setTimestamp();
 
-
-
     for (i = 0; i < 20; i++) {
       clist = client.commands.array()[i];
       embed.addField(`${prefix}${clist.help.name}`, `${clist.help.description}`);
@@ -36,7 +34,6 @@ exports.run = (client, message, args) => {
       clist = client.commands.array()[i];
       embed2.addField(`${prefix}${clist.help.name}`, `${clist.help.description}`);
     }
-    // message.channel.send(`${message.author}, I've sent you a PM with the help information`);
     message.author.send(
       embed, '', {
         disableEveryone: true

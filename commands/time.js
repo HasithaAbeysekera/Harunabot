@@ -29,6 +29,6 @@ exports.conf = {
 
 exports.help = {
   name: 'time',
-  description: 'get time',
+  description: 'Get current time across several time zones.',
   usage: 'time'
 };

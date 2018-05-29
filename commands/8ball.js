@@ -11,12 +11,10 @@ exports.run = function(client, message, args) {
       console.log(err.stack);
     }));
   }
-  // argstring = (Math.floor((Math.random() * 100))).toString();
   argstring = args.join(' ');
   hash = farmhash.hash32(argstring);
   hash100 = hash % 100;
   hashFinal = Math.round(hash100 / 5);
-  // message.channel.send(hashFinal);
   message.channel.send(`${eightball[hashFinal]}`);
 };
 

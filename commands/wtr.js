@@ -11,7 +11,6 @@ exports.run = function(client, message, args) {
     }).catch((err => {
       console.log(err.stack);
     }));
-    // return addHelpReaction(msg);
   } else {
 
     username = args[0].toLowerCase();

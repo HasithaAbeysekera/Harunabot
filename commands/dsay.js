@@ -25,6 +25,6 @@ exports.conf = {
 
 exports.help = {
   name: 'dsay',
-  description: 'Haruna will talk in the mentionned channel, default if no channel is mentionned',
+  description: 'Haruna will talk in the mentioned channel, default if no channel is mentioned',
   usage: 'dsay2 [channel] [message]'
 };

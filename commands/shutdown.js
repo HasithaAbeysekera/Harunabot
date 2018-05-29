@@ -3,7 +3,6 @@ exports.run = function(client, message, args) {
   client.destroy((err) => {
     console.log(err);
   });
-
 };
 
 exports.conf = {

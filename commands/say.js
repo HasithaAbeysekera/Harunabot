@@ -1,5 +1,4 @@
 exports.run = function(client, message, args) {
-  // message.channel.send(`clean: ${message.cleanContent}`);
   if(!args[0]){
     return message.channel.send(`Error: message can't be empty`);
   }
@@ -22,5 +21,5 @@ exports.conf = {
 exports.help = {
   name: 'say',
   description: 'Haruna will repeat your words',
-  usage: 'say'
+  usage: 'say [text]'
 };

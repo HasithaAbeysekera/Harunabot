@@ -1,5 +1,4 @@
 const Discord = require("discord.js");
-let getUser = require('../util/getUser.js');
 const owner = require('../config.json').ownerid;
 const prefix = require('../config.json').prefix;
 const addHelpReaction = require('../util/addHelpReaction.js');
