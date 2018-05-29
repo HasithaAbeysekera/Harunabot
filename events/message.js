@@ -23,10 +23,10 @@ module.exports = message => {
 
   if (client.commands.has(command)) {
     cmd = client.commands.get(command);
-    console.log(`Command ${command} activated`);
+    console.log(`Command ${command} activated by ${message.author.username}`);
   } else if (client.aliases.has(command)) {
     cmd = client.commands.get(client.aliases.get(command));
-    console.log(`Command ${command} activated`);
+    console.log(`Command ${command} activated by ${message.author.username}`);
   }
   if (cmd) {
     let perms = 0;
