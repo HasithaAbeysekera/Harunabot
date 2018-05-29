@@ -10,7 +10,6 @@ module.exports = message => {
       return message.channel.send(`:regional_indicator_f:`);
     } else if (message.content.toLowerCase().trim() == "rip") {
       return RipReaction(message);
-      // return message.channel.send(`test rip`);
     } else {
       return;
     }
