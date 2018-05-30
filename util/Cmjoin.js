@@ -11,11 +11,11 @@ module.exports = (message, client, args) => {
     if (args[2].toLowerCase() == 'haruna') {
       memberToAdd.addRole(teamHaruna);
       client.teamHaruna.set(memberToAdd.id, 0);
-      return message.channel.send(`${message.author} has been assigned to Team Haruna!`);
+      return message.channel.send(`${memberToAdd}} has been assigned to Team Haruna!`);
     } else if (args[2].toLowerCase() == 'bismarck') {
       memberToAdd.addRole(teamBismarck);
       client.teamBismarck.set(memberToAdd.id, 0);
-      return message.channel.send(`${message.author} has been assigned to Team Bismarck!`);
+      return message.channel.send(`${memberToAdd} has been assigned to Team Bismarck!`);
     } else {
       return message.channel.send(`Error`);
     }
