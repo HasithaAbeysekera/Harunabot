@@ -14,7 +14,7 @@ exports.run = function(client, message, args) {
   } else if (args[0].toLowerCase() === 'join') {
     return Cjoin(message, client);
   } else if (args[0].toLowerCase() === 'mjoin') {
-    return Cmjoin(message, client);
+    return Cmjoin(message, client, args);
   } else if (args[0].toLowerCase() === 'teamharuna') { //displays teams
     return Cteams(message, client, client.teamHaruna); //used to complete a mission for someone
   } else if (args[0].toLowerCase() === 'teambismarck') {
