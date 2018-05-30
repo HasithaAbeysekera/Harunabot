@@ -1,4 +1,7 @@
 module.exports = (message, client) => {
+  if (!message.member.roles.find(u => u.name == 'Line Officers')){
+    return "You must be a clan member to take part";
+  }
   let teamHaruna = message.guild.roles.find(u => u.name == 'Team Haruna');
   let teamBismarck = message.guild.roles.find(u => u.name == 'Team Bismarck');
   if (message.member.roles.find(u => u.name == 'Team Haruna') || message.member.roles.find(u => u.name == 'Team Bismarck')) {

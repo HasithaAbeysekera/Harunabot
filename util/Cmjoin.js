@@ -1,5 +1,5 @@
 module.exports = (message, client) => {
-  if (message.author.id != guild.ownerID) {
+  if (message.author.id != message.guild.ownerID) {
     return message.channel.send(`You cannot use this function`);
   }
   let teamHaruna = message.guild.roles.find(u => u.name == 'Team Haruna');
