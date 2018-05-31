@@ -25,18 +25,12 @@ exports.run = function(client, message, args) {
     if (!message.member.roles.find(u => u.name == 'Contest Moderator')) {
       return message.channel.send("Only a Contest Moderator can use this command");
     } else {
-      if (message.channel.id == 435849317706891284) { //teamharuna
-        return Cadd(message, client, args, client.teamHaruna);
-      } else if (message.channel.id == 435849356013338625) { //teambismarck
-        return Cadd(message, client, args, client.teamBismarck);
-      } else {
-        return message.channel.send(`Error: This command cannot be used in this channel`);
-      }
+      return Cadd(message, client, args);
     }
   } else if (args[0].toLowerCase() === 'totals') {
     return Cteamtotals(message, client);
   } else if (args[0].toLowerCase() === 'remove') {
-    return Cremove(message, client);
+    return Cremove(message, client, args);
   }
   return message.channel.send('Error: unrecognised arguments');
 };

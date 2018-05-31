@@ -1,4 +1,4 @@
-module.exports = (message, client) => {
+module.exports = (message, client, args) => {
   if (message.author.id != message.guild.ownerID) {
     return message.channel.send(`You cannot use this function`);
   }

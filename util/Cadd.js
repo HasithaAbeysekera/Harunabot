@@ -1,6 +1,16 @@
 const Discord = require("discord.js");
 
-module.exports = (message, client, args, team) => {
+module.exports = (message, client, args) => {
+
+  if (message.channel.id == 451439465215295498) {
+    team = client.teamHaruna;
+  }
+  elseif(message.channel.id == 451439380976893952) {
+    team = client.teamBismarck;
+  } else {
+    return message.channel.send(`Error: This command cannot be used in this channel`);
+  }
+
   if (!args[1] || !message.mentions.members.first()) {
     return message.channel.send(`Error: no user mentionned`);
   } else {
