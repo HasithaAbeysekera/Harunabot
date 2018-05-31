@@ -15,9 +15,9 @@ exports.run = function(client, message, args) {
     return Cjoin(message, client);
   } else if (args[0].toLowerCase() === 'mjoin') {
     return Cmjoin(message, client, args);
-  } else if (args[0].toLowerCase() === 'teamharuna') { //displays teams
-    return Cteams(message, client, client.teamHaruna); //used to complete a mission for someone
-  } else if (args[0].toLowerCase() === 'teambismarck') {
+  } else if (args[0].toLowerCase() === 'teamharuna' || args[0].toLowerCase() === 'haruna') {
+    return Cteams(message, client, client.teamHaruna);
+  } else if (args[0].toLowerCase() === 'teambismarck' || args[0].toLowerCase() === 'bismarck') {
     return Cteams(message, client, client.teamBismarck);
   } else if (args[0].toLowerCase() === 'myscore') {
     return Cscore(message, client);
