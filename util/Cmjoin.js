@@ -10,11 +10,11 @@ module.exports = (message, client, args) => {
   } else {
     if (args[2].toLowerCase() == 'haruna') {
       memberToAdd.addRole(teamHaruna);
-      client.teamHaruna.set(memberToAdd.id, 0);
+      client.HarunaData.set(memberToAdd.id, 0);
       return message.channel.send(`${memberToAdd}} has been assigned to Team Haruna!`);
     } else if (args[2].toLowerCase() == 'bismarck') {
       memberToAdd.addRole(teamBismarck);
-      client.teamBismarck.set(memberToAdd.id, 0);
+      client.BismarckData.set(memberToAdd.id, 0);
       return message.channel.send(`${memberToAdd} has been assigned to Team Bismarck!`);
     } else {
       return message.channel.send(`Error`);

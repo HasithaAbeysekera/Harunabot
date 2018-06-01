@@ -10,12 +10,10 @@ module.exports = (message, client, args) => {
     return message.channel.send("Please enter a team name");
   }
   if (args[2].toLowerCase() == 'haruna') {
-    let Harunaarray = client.teamHaruna;
-    Harunaarray.delete(${memberToAdd.id});
+    client.HarunaData.delete(${memberToAdd.id});
     return message.channel.send(`${memberToAdd} has been removed from Team Haruna!`);
   } else if (args[2].toLowerCase() == 'bismarck') {
-    let Bismarckarray = client.teamBismarck;
-    Bismarckarray.delete(memberToAdd.id);
+    client.BismarckData.delete(memberToAdd.id);
     return message.channel.send(`${memberToAdd} has been removed from Team Bismarck!`);
   } else {
     return message.channel.send(`Error`);

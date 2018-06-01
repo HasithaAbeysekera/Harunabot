@@ -3,8 +3,8 @@ const Cteamtotal = require('../util/Cteamtotal.js');
 
 module.exports = (message, client) => {
 
-  let totalHaruna = Cteamtotal(message, client, client.teamHaruna);
-  let totalBismarck = Cteamtotal(message, client, client.teamBismarck);
+  let totalHaruna = Cteamtotal(message, client, client.HarunaData);
+  let totalBismarck = Cteamtotal(message, client, client.BismarckData);
   let equal = (totalHaruna == totalBismarck);
   if (totalHaruna > totalBismarck) {
     leader = 'Haruna';
