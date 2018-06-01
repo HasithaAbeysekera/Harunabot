@@ -11,7 +11,7 @@ module.exports = (message, client, args) => {
   }
   if (args[2].toLowerCase() == 'haruna') {
     let Harunaarray = client.teamHaruna;
-    Harunaarray.delete(memberToAdd.id);
+    Harunaarray.delete(${memberToAdd.id});
     return message.channel.send(`${memberToAdd} has been removed from Team Haruna!`);
   } else if (args[2].toLowerCase() == 'bismarck') {
     let Bismarckarray = client.teamBismarck;
