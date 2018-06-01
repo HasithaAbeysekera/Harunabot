@@ -2,8 +2,8 @@ module.exports = (message, client, args) => {
   if (message.author.id != message.guild.ownerID) {
     return message.channel.send(`You cannot use this function`);
   }
-  let teamHaruna = message.guild.roles.find(u => u.name == 'Team Haruna');
-  let teamBismarck = message.guild.roles.find(u => u.name == 'Team Bismarck');
+  // let teamHaruna2 = message.guild.roles.find(u => u.name == 'Team Haruna');
+  // let teamBismarck2 = message.guild.roles.find(u => u.name == 'Team Bismarck');
   let memberToAdd = message.mentions.members.first();
 
   if (!args[2]) {
