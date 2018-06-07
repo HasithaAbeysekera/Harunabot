@@ -12,13 +12,11 @@ exports.run = (client, message, args) => {
       .catch(console.error)
   };
 
-
-
   if (!message.mentions.users.first()) {
     return message.channel.send('Mention a user to mute');
   } else {
-    user = message.mentions.users.first();
-    if (!client.lockit) client.lockit = [];
+    member = message.mentions.members.first();
+
     let time = args.splice(1).join(' ');
     let validUnlocks = ['release', 'unmute'];
     if (!time) {
@@ -26,27 +24,32 @@ exports.run = (client, message, args) => {
     }
     if (validUnlocks.includes(time)) {
 
-      let target = getGuildMember(message, user);
-      target.removeRole(silenced).then(() => {
-        message.channel.send(`${target.user} has been unmuted`);
-        clearTimeout(client.lockit[target.id]);
-        delete client.lockit[target.id];
+      member.removeRole(silenced).then(() => {
+        message.channel.send(`${member} has been unmuted`);
+        clearTimeout(client.lockit[member.id]);
+        delete client.lockit[member.id];
       }).catch(error => {
         console.log(error);
       });
     } else {
-      let target = message.mentions.members.first();
-      target.addRole(silenced).then(() => {
+      // foreach (r in member.roles.array()) {
+      //   member.removeRole(r);
+      // }
+      member.roles.array().forEach(function(r) {
+        member.removeRole(r);
+      });
+      // member.removeRole
+      member.addRole(silenced).then(() => {
         // message.channel.send(`${target.user} has been muted for ${ms(ms(time), { long:true })}`, {
-        message.channel.send(`${target.user} has been muted for ${ms(ms(time), { long:true })}`, {
+        message.channel.send(`${member} has been muted for ${ms(ms(time), { long:true })}`, {
           files: [{
             attachment: assets["muted"],
             name: 'muted.gif'
           }]
         }).then(() => {
-          client.lockit[target.id] = setTimeout(() => {
-            target.removeRole(silenced).then(message.channel.send('Lockdown lifted.')).catch(console.error);
-            delete client.lockit[target.id];
+          client.lockit[member.id] = setTimeout(() => {
+            member.removeRole(silenced).then(message.channel.send(`Lockdown lifted. ${member} has been unmuted.`)).catch(console.error);
+            delete client.lockit[member.id];
           }, ms(time));
         }).catch(error => {
           console.log(error);
@@ -60,7 +63,7 @@ exports.conf = {
   enabled: true,
   guildOnly: true,
   aliases: ['silence'],
-  permLevel: 4
+  permLevel: 2
 };
 
 exports.help = {

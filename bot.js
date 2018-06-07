@@ -22,6 +22,8 @@ client.HarunaData = new Enmap({provider: provider});
 const provider2 = new EnmapLevel({name: "BismarckData"});
 client.BismarckData = new Enmap({provider: provider2});
 
+client.lockit = []//muted users are here
+
 
 const log = message => {
   console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] ${message}`);
