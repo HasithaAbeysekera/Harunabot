@@ -10,13 +10,15 @@ exports.run = function(client, message, args) {
     let timeSG = moment().tz("Asia/Singapore").format('HH:mm');
     let timeSA = moment().tz("Australia/Adelaide").format('HH:mm');
     let timeMELB = moment().tz("Australia/Melbourne").format('HH:mm');
+    let timeNZ = moment().tz("Pacific/Auckland").format('HH:mm');
 
     return message.channel.send(`It is currently:\n\n` +
       `${timeINDIA} in India\n` +
-      `${timeINDO} in Indonesia\n` +
-      `${timeSG} in Singapore/HK/Philippines\n` +
+      `${timeINDO} in Indonesia (West)/Vietnam\n` +
+      `${timeSG} in Singapore/HK/Philippines/Indonesia (Central)\n` +
       `${timeSA} in South Australia\n` +
-      `${timeMELB} in Melbourne`);
+      `${timeMELB} in Melbourne\n` +
+      `${timeNZ} in New Zealand`);
   }
 };
 
