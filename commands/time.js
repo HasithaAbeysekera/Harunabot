@@ -11,14 +11,22 @@ exports.run = function(client, message, args) {
     let timeSA = moment().tz("Australia/Adelaide").format('HH:mm');
     let timeMELB = moment().tz("Australia/Melbourne").format('HH:mm');
     let timeNZ = moment().tz("Pacific/Auckland").format('HH:mm');
+    let timeJP = moment().tz("Asia/Tokyo").format('HH:mm');
 
     return message.channel.send(`It is currently:\n\n` +
       `${timeINDIA} in India\n` +
       `${timeINDO} in Indonesia (West)/Vietnam\n` +
       `${timeSG} in Singapore/HK/Philippines/Indonesia (Central)\n` +
+      `${timeJP} in Japan\n` +
       `${timeSA} in South Australia\n` +
       `${timeMELB} in Melbourne\n` +
       `${timeNZ} in New Zealand`);
+  } else if (!args[1] && args[0]){
+return;
+  } else if (args[1] && args[0]){
+return;
+  } else {
+    return message.channel.send(`Incorrect format`);
   }
 };
 
