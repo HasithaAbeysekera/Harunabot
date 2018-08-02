@@ -6,7 +6,6 @@ const addHelpReaction = require('../util/addHelpReaction.js');
 exports.run = (client, message, args) => {
   if (!args[0]) {
     const commandNames = Array.from(client.commands.keys());
-    const longest = commandNames.reduce((long, str) => Math.max(long, str.length), 0);
 
     const embed = new Discord.RichEmbed()
       .setAuthor(`\u200b`, `${message.author.displayAvatarURL}`)

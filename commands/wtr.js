@@ -1,9 +1,6 @@
 const Discord = require("discord.js");
-const fs = require('fs');
-let validRegions = ["sea", "na", "eu", "ru"];
 let request = require("request");
 const addHelpReaction = require('../util/addHelpReaction.js');
-let allowedChannels = [222658565075107840, 250882784439042048];
 exports.run = function(client, message, args) {
   if (!args[0] || message.mentions.users.first()) { //!args[1]
     return message.channel.send("Invalid input, click ❓ for more details").then(msg => {
@@ -31,7 +28,7 @@ exports.run = function(client, message, args) {
         message.channel.send(`Grabbing WTR signature for ${nickname}...`);
         picURL = `https://asia.warshipstoday.com/signature/${accountId}/dark.png`
         // message.channel.send(`WTR image: ${picURL}`);
-        message.channel.send(new Discord.Attachment(picURL, 'dark.png')).then(msg => {
+        message.channel.send(new Discord.Attachment(picURL, 'dark.png')).then(() => {
           console.log("wtr image sent");
         }).catch(err => {
           console.log(err.stack);

@@ -3,7 +3,6 @@ const fs = require('fs');
 const moment = require('moment');
 const client = new Discord.Client();
 const token = require("./config.json").token;
-const prefix = require("./config.json").prefix;
 const ownerid = require("./config.json").ownerid;
 const memberrolename = require("./config.json").memberrolename;
 const captainrolename = require("./config.json").captainrolename;
@@ -11,7 +10,6 @@ const adminrolename = require("./config.json").adminrolename;
 const admin2rolename = require("./config.json").admin2rolename;
 const avatarTimer = require("./config.json").avatarTimer
 let changeAvatar = require ('./util/changeAvatar.js');
-const dir = './assets/avatars/';
 const Enmap = require('enmap');
 const EnmapLevel = require('enmap-level');
 require('./util/EventLoader')(client);

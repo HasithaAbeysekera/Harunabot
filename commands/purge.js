@@ -1,5 +1,3 @@
-const Discord = require("discord.js");
-const prefix = require('../config.json').prefix;
 const addHelpReaction = require('../util/addHelpReaction.js');
 
 exports.run = (client, message, args) => {

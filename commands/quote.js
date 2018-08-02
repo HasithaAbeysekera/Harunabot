@@ -1,7 +1,6 @@
-const Discord = require("discord.js");
 let quotes = require('../assets/quotes.json');
 
-exports.run = function(client, message, args) {
+exports.run = function(message) {
 
   size = quotes.length;
   quoteNumber = Math.floor((Math.random() * size));

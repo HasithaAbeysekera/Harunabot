@@ -1,6 +1,4 @@
 const ms = require('ms');
-const Discord = require("discord.js");
-let getGuildMember = require('../util/getGuildMember.js');
 const silencedRole = require('../config.json').silencedrole;
 let assets = require('../assets/assets.json');
 exports.run = (client, message, args) => {

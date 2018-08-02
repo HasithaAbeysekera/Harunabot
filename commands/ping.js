@@ -1,4 +1,4 @@
-exports.run = (client, message) => {
+exports.run = (message) => {
     message.channel.send('Ping?')
         .then(msg => {
             msg.edit(`Pong! (took: ${msg.createdTimestamp - message.createdTimestamp}ms). はい、榛名は大丈夫です`);

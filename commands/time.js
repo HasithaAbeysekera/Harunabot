@@ -1,8 +1,6 @@
-const Discord = require("discord.js");
-let assets = require('../assets/assets.json');
 let moment = require('moment-timezone');
 
-exports.run = function(client, message, args) {
+exports.run = function(message, args) {
 
   if (!args[0]) {
     let timeINDIA = moment().tz("Asia/Kolkata").format('HH:mm');

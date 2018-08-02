@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 let assets = require('../assets/assets.json');
 
-exports.run = function(client, message, args) {
+exports.run = function(message) {
     const embed = new Discord.RichEmbed()
         .setImage(assets["runpika"])
         .setColor(0xFFFF00)
