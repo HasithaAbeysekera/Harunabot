@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 let assets = require('../assets/assets.json');
 
-exports.run = function(message) {
+exports.run = function(client, message, args) {
     const embed = new Discord.RichEmbed()
         .setTitle(`:notes:My Shiny Teeth and Me:notes:`)
         .setURL("http://hestia.dance/")

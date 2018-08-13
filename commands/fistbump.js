@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 let assets = require('../assets/assets.json');
 
-exports.run = function(message) {
+exports.run = function(client, message, args) {
     const embed = new Discord.RichEmbed()
         .setImage(assets["fistbump"])
         .setColor(0x00FFFF)

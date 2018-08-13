@@ -1,5 +1,7 @@
+const Discord = require("discord.js");
 const addHelpReaction = require('../util/addHelpReaction.js');
 const xkcdGet = require('../util/xkcdGet.js');
+const xkcdGet2 = require('../util/xkcdGet2.js');
 
 exports.run = function(client, message, args) {
   if (args[0] == "new" || args[0] == "newest" || args[0] == "latest" || args[0] == "n") {

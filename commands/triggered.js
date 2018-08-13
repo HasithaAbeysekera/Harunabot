@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 let assets = require('../assets/assets.json');
 
-exports.run = function(message) {
+exports.run = function(client, message, args) {
 
   size = assets["triggered"].length;
   randNumber = Math.floor((Math.random() * size));

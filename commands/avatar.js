@@ -1,4 +1,6 @@
 const Discord = require("discord.js");
+const owner = require('../config.json').ownerid;
+const prefix = require('../config.json').prefix;
 const addHelpReaction = require('../util/addHelpReaction.js');
 
 exports.run = function(client, message, args) {

@@ -1,4 +1,4 @@
-exports.run = function(client, args) {
+exports.run = function(client, message, args) {
     client.user.setPresence({
       game: {
         name: args.join(" "),
