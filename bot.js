@@ -63,6 +63,7 @@ client.reload = command => {
     }
   });
 };
+client.on('error', console.error);
 
 client.login(token);
 
