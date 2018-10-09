@@ -1,6 +1,6 @@
 const kouhairole = "Kawaii Kouhai";
 
-module.exports = (client,msg) => {
+module.exports = (client) => {
   thisGuild = client.guilds.first();
   let guildKouhaiRole = thisGuild.roles.find(u => u.name == kouhairole);
   let kouhaiMembers = guildKouhaiRole.members.array();

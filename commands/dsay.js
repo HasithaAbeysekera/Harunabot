@@ -1,6 +1,11 @@
 const defaultChannelID = require("../config.json").defaultChannel;
 
 exports.run = function(client, message, args) {
+  if(message.channel.type == 'dm'){
+    thisGuild = client.guilds.first();
+    let channelToSend = thisGuild.channels.find(u => u.id == defaultChannelID);
+    return channelToSend.send(args.join(" "));
+  }
   if(!args[0]){
     return message.channel.send(`Error: message cannot be empty.`);
   }
@@ -18,7 +23,7 @@ exports.run = function(client, message, args) {
 
 exports.conf = {
   enabled: true,
-  guildOnly: true,
+  guildOnly: false,
   aliases: [],
   permLevel: 3
 };
