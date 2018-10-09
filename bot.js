@@ -11,7 +11,6 @@ const adminrolename = require("./config.json").adminrolename;
 const admin2rolename = require("./config.json").admin2rolename;
 const avatarTimer = require("./config.json").avatarTimer
 let changeAvatar = require ('./util/changeAvatar.js');
-let Kouhaichange2 = require('./util/kouhaichange.js')
 const dir = './assets/avatars/';
 const Enmap = require('enmap');
 const EnmapLevel = require('enmap-level');
