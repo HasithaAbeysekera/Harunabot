@@ -11,6 +11,7 @@ const adminrolename = require("./config.json").adminrolename;
 const admin2rolename = require("./config.json").admin2rolename;
 const avatarTimer = require("./config.json").avatarTimer
 let changeAvatar = require ('./util/changeAvatar.js');
+let Kouhaichange2 = require('./util/kouhaichange.js')
 const dir = './assets/avatars/';
 const Enmap = require('enmap');
 const EnmapLevel = require('enmap-level');
@@ -22,7 +23,8 @@ client.HarunaData = new Enmap({provider: provider});
 const provider2 = new EnmapLevel({name: "BismarckData"});
 client.BismarckData = new Enmap({provider: provider2});
 
-client.lockit = []//muted users are here
+client.lockit = [];//muted users are here
+client.kouhai = false;
 
 
 const log = message => {
@@ -91,6 +93,14 @@ client.elevation = message => {
 };
 
 client.setInterval(changeA, 1000 * 60 * avatarTimer);
+
+function Kouhaichange(){
+  if(client.kouhai){
+    Kouhaichange2(client);
+  }  
+}
+
+client.setInterval(Kouhaichange, 1000*60*5);
 
 process.on("unhandledRejection", err => {
   console.error("Uncaught Promise Error: \n" + err.stack);
