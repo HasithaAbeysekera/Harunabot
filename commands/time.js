@@ -5,6 +5,7 @@ let moment = require('moment-timezone');
 exports.run = function(client, message, args) {
 
   if (!args[0]) {
+    let timeUSA = moment().tz("America/Chicago").format('HH:mm');
     let timeINDIA = moment().tz("Asia/Kolkata").format('HH:mm');
     let timeINDO = moment().tz("Asia/Jakarta").format('HH:mm');
     let timeSG = moment().tz("Asia/Singapore").format('HH:mm');
@@ -14,6 +15,7 @@ exports.run = function(client, message, args) {
     let timeJP = moment().tz("Asia/Tokyo").format('HH:mm');
 
     return message.channel.send(`It is currently:\n\n` +
+      `${timeUSA} in America (Central)\n` +
       `${timeINDIA} in India\n` +
       `${timeINDO} in Indonesia (West)/Vietnam\n` +
       `${timeSG} in Singapore/HK/Philippines/Indonesia (Central)\n` +

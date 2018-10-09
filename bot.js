@@ -94,14 +94,6 @@ client.elevation = message => {
 
 client.setInterval(changeA, 1000 * 60 * avatarTimer);
 
-function Kouhaichange(){
-  if(client.kouhai){
-    Kouhaichange2(client);
-  }  
-}
-
-client.setInterval(Kouhaichange, 1000*60*5);
-
 process.on("unhandledRejection", err => {
   console.error("Uncaught Promise Error: \n" + err.stack);
 });
