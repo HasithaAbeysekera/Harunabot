@@ -1,10 +1,15 @@
 const defaultChannelID = require("../config.json").defaultChannel;
+const ownerid = require("../config.json").ownerid;
 
 exports.run = function(client, message, args) {
   if(message.channel.type == 'dm'){
+    if(message.author.id != ownerid){
+      return message.channel.send("Error: you don't have permission to use this command");
+    } else {
     thisGuild = client.guilds.first();
     let channelToSend = thisGuild.channels.find(u => u.id == defaultChannelID);
     return channelToSend.send(args.join(" "));
+    }
   }
   if(!args[0]){
     return message.channel.send(`Error: message cannot be empty.`);
