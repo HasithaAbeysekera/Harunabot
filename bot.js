@@ -25,6 +25,8 @@ client.BismarckData = new Enmap({provider: provider2});
 client.lockit = [];//muted users are here
 client.kouhai = false;
 
+client.cycleAvatars = true;
+
 
 const log = message => {
   console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] ${message}`);
@@ -91,7 +93,9 @@ client.elevation = message => {
    changeAvatar(client);
 };
 
-client.setInterval(changeA, 1000 * 60 * avatarTimer);
+if(client.cycleAvatars){ 
+  client.setInterval(changeA, 1000 * 60 * avatarTimer);
+}
 
 process.on("unhandledRejection", err => {
   console.error("Uncaught Promise Error: \n" + err.stack);
