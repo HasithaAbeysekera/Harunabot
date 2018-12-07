@@ -15,7 +15,7 @@ if (client.rollcallActive){
 message.channel.send("Ahoy (clan mention), Haruna desu! :gao:  Please react Y or M on your availability for clan wars tonight! :Love:").then(msg => {
   client.rollcallMsgId = msg.id;
   client.rollcallActive = true;
-}).catch(console.error));
+}).catch(console.error);
 
 
 function ClearCWRole() {
