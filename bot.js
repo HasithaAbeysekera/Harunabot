@@ -27,6 +27,9 @@ client.kouhai = false;
 
 client.cycleAvatars = true;
 
+client.rollcallActive = false;
+client.rollcallMsgId = 0;
+
 
 const log = message => {
   console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] ${message}`);

@@ -1,5 +1,4 @@
 const ms = require('ms');
-const silencedRole = require('../config.json').silencedrole;
 const rolecooldown = 1000 * 60 * 60 * 14;
 exports.run = async (client, message, args) => {
 
@@ -13,13 +12,19 @@ if (client.rollcallActive){
 }
 
 message.channel.send("Ahoy (clan mention), Haruna desu! :gao:  Please react Y or M on your availability for clan wars tonight! :Love:").then(msg => {
+  message.delete();
+  msg.react("🇾");
+  msg.react("🇳")
   client.rollcallMsgId = msg.id;
   client.rollcallActive = true;
 }).catch(console.error);
 
-
 function ClearCWRole() {
-  cwrole.members.deleteAll();
+  let membersArray = cwrole.members.array();
+  for(i = 0; i < membersArray.length; i++){
+    membersArray[i].removeRole(cwrole);
+  }
+  message.channel.send("Cleared CW role");
 };
 
 client.setInterval(ClearCWRole, rolecooldown);
