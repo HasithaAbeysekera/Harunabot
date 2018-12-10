@@ -4,7 +4,7 @@ module.exports = (messageReaction,user) => {
   if(user.bot){
     return;
   }
-  messageReaction.message.channel.send(`rolecall is active: ${client.rollcallActive} and id is: ${client.rollcallMsgId}`);
+
   if(client.rollcallActive && messageReaction.message.id == client.rollcallMsgId){
     if(messageReaction.emoji.name == '🇾'){
       let target = messageReaction.message.guild.members.find(u => u.id == user.id);
