@@ -19,15 +19,13 @@ message.channel.send("Ahoy (clan mention), Haruna desu! :gao:  Please react Y or
   client.rollcallActive = true;
 }).catch(console.error);
 
-function ClearCWRole() {
+setTimeout(function(){ 
   let membersArray = cwrole.members.array();
   for(i = 0; i < membersArray.length; i++){
     membersArray[i].removeRole(cwrole);
   }
   message.channel.send("Cleared CW role");
-};
-
-client.setInterval(ClearCWRole, rolecooldown);
+}, 3000);
 
 };
 
