@@ -1,6 +1,3 @@
-const ms = require('ms');
-const silencedRole = require('../config.json').silencedrole;
-const rolecooldown = 1000 * 60 * 60;
 exports.run = async (client, message, args) => {
 
 let cwrole = message.guild.roles.find(u => u.name == "Active CB");

@@ -1,5 +1,5 @@
 const ms = require('ms');
-const rolecooldown = 1000 * 60 * 60 * 14;
+const rolecooldown = 1000 * 60 * 60;
 exports.run = async (client, message, args) => {
 
 let cwrole = message.guild.roles.find(u => u.name == "Active CB");
@@ -25,7 +25,7 @@ setTimeout(function(){
     membersArray[i].removeRole(cwrole);
   }
   message.channel.send("Cleared CW role");
-}, 3000);
+}, rolecooldown);
 
 };
 
