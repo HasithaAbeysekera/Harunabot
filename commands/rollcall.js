@@ -1,5 +1,5 @@
 const ms = require('ms');
-const rolecooldown = 1000 * 60 * 60;
+const rolecooldown = 1000 * 60 * 60 * 12;
 exports.run = async (client, message, args) => {
 
 let cwrole = message.guild.roles.find(u => u.name == "Active CB");
@@ -14,7 +14,7 @@ if (client.rollcallActive){
 message.channel.send("Ahoy (clan mention), Haruna desu! :gao:  Please react Y or M on your availability for clan wars tonight! :Love:").then(msg => {
   message.delete();
   msg.react("🇾");
-  msg.react("🇳")
+  msg.react("🇲")
   client.rollcallMsgId = msg.id;
   client.rollcallActive = true;
 }).catch(console.error);
@@ -25,6 +25,8 @@ setTimeout(function(){
     membersArray[i].removeRole(cwrole);
   }
   message.channel.send("Cleared CW role");
+  client.rollcallMsgId = 0;
+  client.rollcallActive = false;
 }, rolecooldown);
 
 };
@@ -32,7 +34,7 @@ setTimeout(function(){
 exports.conf = {
   enabled: true,
   guildOnly: true,
-  aliases: ['cw'],
+  aliases: ['cw', 'cws'],
   permLevel: 2
 };
 

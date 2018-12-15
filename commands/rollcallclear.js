@@ -13,7 +13,8 @@ if (!cwrole) {
     membersArray[i].removeRole(cwrole);
   }
   message.channel.send("Cleared CW role");
-
+  client.rollcallMsgId = 0;
+  client.rollcallActive = false;
 }
 
 exports.conf = {
