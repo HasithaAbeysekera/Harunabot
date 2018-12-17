@@ -9,4 +9,6 @@ module.exports = client => {
   client.on('emojiCreate', reqEvent('emojiCreate'));
   client.on('emojiUpdate', reqEvent('emojiUpdate'));
   client.on('messageReactionAdd', reqEvent('CWmessageReaction'));
+  client.on('messageReactionRemove', reqEvent('CWmessageUnReaction'));
+  
 };
