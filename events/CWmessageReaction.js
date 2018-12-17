@@ -1,5 +1,6 @@
 module.exports = (messageReaction,user) => {
-  let cwrole = messageReaction.message.guild.roles.find(u => u.name == "Active CB");
+  let cwconfirmed = messageReaction.message.guild.roles.find(u => u.name == "CB Confirmed");
+  let cwmaybe = message.guild.roles.find(u => u.name == "CB Maybe");
   let client = messageReaction.message.client;
   if(user.bot){
     return;
@@ -8,7 +9,11 @@ module.exports = (messageReaction,user) => {
   if(client.rollcallActive && messageReaction.message.id == client.rollcallMsgId){
     if(messageReaction.emoji.name == '🇾'){
       let target = messageReaction.message.guild.members.find(u => u.id == user.id);
-      target.addRole(cwrole);
+      target.addRole(cwconfirmed);
+    }
+    if(messageReaction.emoji.name == '🇲'){
+      let target = messageReaction.message.guild.members.find(u => u.id == user.id);
+      target.addRole(cwmaybe);
     }
   }
   return;

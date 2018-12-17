@@ -2,16 +2,18 @@ const ms = require('ms');
 const rolecooldown = 1000 * 60 * 60 * 12;
 exports.run = async (client, message, args) => {
 
-let cwrole = message.guild.roles.find(u => u.name == "Active CB");
-if (!cwrole) {
-  return message.channel.send("Error no Active CB role found");
+let cwconfirmed = message.guild.roles.find(u => u.name == "CB Confirmed");
+let cwmaybe = message.guild.roles.find(u => u.name == "CB Maybe");
+if (!cwconfirmed && !cwmaybe) {
+  return message.channel.send("Error no CB roles found");
 };
 
 if (client.rollcallActive){
   return message.channel.send("A CW rolecall is already active for tonight.");
 }
-
-message.channel.send("Ahoy (clan mention), Haruna desu! :gao:  Please react Y or M on your availability for clan wars tonight! :Love:").then(msg => {
+const gao = message.guild.emojis.find(emoji => emoji.name === "gao");
+const love = message.guild.find(emoji => emoji.name === "love");
+message.channel.send(`Ahoy @FISH, Haruna desu! ${gao} Please react Y or M on your availability for clan wars tonight! ${love}`).then(msg => {
   message.delete();
   msg.react("🇾");
   msg.react("🇲")
@@ -20,11 +22,14 @@ message.channel.send("Ahoy (clan mention), Haruna desu! :gao:  Please react Y or
 }).catch(console.error);
 
 setTimeout(function(){ 
-  let membersArray = cwrole.members.array();
+  let membersArray = cwconfirmed.members.array();
   for(i = 0; i < membersArray.length; i++){
-    membersArray[i].removeRole(cwrole);
+    membersArray[i].removeRole(cwconfirmed);
   }
-  message.channel.send("Cleared CW role");
+  let membersArray2 = cwmaybe.members.array();
+  for(i = 0; i < membersArray2.length; i++){
+    membersArray2[i].removeRole(cwmaybe);
+  }
   client.rollcallMsgId = 0;
   client.rollcallActive = false;
 }, rolecooldown);
