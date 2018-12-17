@@ -12,7 +12,7 @@ if (client.rollcallActive){
   return message.channel.send("A CW rolecall is already active for tonight.");
 }
 const gao = message.guild.emojis.find(emoji => emoji.name === "gao");
-const love = message.guild.find(emoji => emoji.name === "love");
+const love = message.guild.emojis.find(emoji => emoji.name === "love");
 message.channel.send(`Ahoy @FISH, Haruna desu! ${gao} Please react Y or M on your availability for clan wars tonight! ${love}`).then(msg => {
   message.delete();
   msg.react("🇾");
