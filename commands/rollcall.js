@@ -4,6 +4,7 @@ exports.run = async (client, message, args) => {
 
 let cwconfirmed = message.guild.roles.find(u => u.name == "CB Confirmed");
 let cwmaybe = message.guild.roles.find(u => u.name == "CB Maybe");
+let fishrole = message.guild.roles.find(u => u.name == "FISH");
 if (!cwconfirmed && !cwmaybe) {
   return message.channel.send("Error no CB roles found");
 };
@@ -12,8 +13,8 @@ if (client.rollcallActive){
   return message.channel.send("A CW rolecall is already active for tonight.");
 }
 const gao = message.guild.emojis.find(emoji => emoji.name === "gao");
-const love = message.guild.emojis.find(emoji => emoji.name === "love");
-message.channel.send(`Ahoy @FISH, Haruna desu! ${gao} Please react Y or M on your availability for clan wars tonight! ${love}`).then(msg => {
+const love = message.guild.emojis.find(emoji => emoji.name === "Love");
+message.channel.send(`Ahoy ${fishrole}, Haruna desu! ${gao} Please react Y or M on your availability for clan wars tonight! ${love}`).then(msg => {
   message.delete();
   msg.react("🇾");
   msg.react("🇲")

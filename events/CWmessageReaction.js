@@ -1,6 +1,6 @@
 module.exports = (messageReaction,user) => {
   let cwconfirmed = messageReaction.message.guild.roles.find(u => u.name == "CB Confirmed");
-  let cwmaybe = message.guild.roles.find(u => u.name == "CB Maybe");
+  let cwmaybe = messageReaction.message.guild.roles.find(u => u.name == "CB Maybe");
   let client = messageReaction.message.client;
   if(user.bot){
     return;
