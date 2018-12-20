@@ -1,11 +1,11 @@
 module.exports = (messageReaction,user) => {
+  if (message.channel.type == 'dm'){
+    return;
+  }
   let cwconfirmed = messageReaction.message.guild.roles.find(u => u.name == "CB Confirmed");
   let cwmaybe = messageReaction.message.guild.roles.find(u => u.name == "CB Maybe");
   let client = messageReaction.message.client;
   if(user.bot){
-    return;
-  }
-  if (message.channel.type == 'dm'){
     return;
   }
   if(client.rollcallActive && messageReaction.message.id == client.rollcallMsgId){
