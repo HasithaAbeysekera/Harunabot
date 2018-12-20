@@ -5,7 +5,9 @@ module.exports = (messageReaction,user) => {
   if(user.bot){
     return;
   }
-
+  if (message.channel.type == 'dm'){
+    return;
+  }
   if(client.rollcallActive && messageReaction.message.id == client.rollcallMsgId){
     if(messageReaction.emoji.name == '🇾'){
       let target = messageReaction.message.guild.members.find(u => u.id == user.id);
