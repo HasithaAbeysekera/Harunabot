@@ -1,5 +1,5 @@
 module.exports = (messageReaction,user) => {
-  if (message.channel.type == 'dm'){
+  if (messageReaction.message.channel.type == 'dm'){
     return;
   }
   let cwconfirmed = messageReaction.message.guild.roles.find(u => u.name == "CB Confirmed");
