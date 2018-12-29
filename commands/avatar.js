@@ -6,13 +6,13 @@ const addHelpReaction = require('../util/addHelpReaction.js');
 exports.run = function(client, message, args) {
   if (!args[0]) {
     message.reply("your avatar is:");
-    return message.channel.send(new Discord.Attachment(message.author.displayAvatarURL, 'avatar.jpg'));
+    return message.channel.send(new Discord.Attachment(message.author.displayAvatarURL, 'avatar.gif'));
   } else if (message.mentions.users.first()) {
     target = message.mentions.users.first();
     message.channel.send(`${target}'s avatar is:`);
-    return message.channel.send(new Discord.Attachment(target.displayAvatarURL, 'avatar.jpg'));
+    return message.channel.send(new Discord.Attachment(target.displayAvatarURL, 'avatar.gif'));
   } else if (args[0] == 'server') {
-    return message.channel.send(new Discord.Attachment(message.guild.iconURL, 'server.jpg'));
+    return message.channel.send(new Discord.Attachment(message.guild.iconURL, 'server.gif'));
   } else {
     return message.channel.send("Error: incorrect format. Click ❓ for more details").then(msg => {
       addHelpReaction(client, msg, message, exports.help.name);
