@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 const prefix = require('../config.json').prefix;
 const cooldowns = new Discord.Collection();
+const owner = require('../config.json').ownerid;
 module.exports = message => {
   let client = message.client;
   if (message.author.bot) return;
@@ -21,13 +22,15 @@ module.exports = message => {
     console.log(`Command ${command} activated by ${message.author.username}`);
   }
   if (cmd) {
-    let perms = 0;
     if (message.channel.type == 'dm') {
       if (cmd.conf.guildOnly) {
         return message.channel.send("Sorry, I don't respond to that command in a DM");
       }
+      if(message.author.id != ownerid) {
+        return message.channel.send(`You don't have permission to use this command.`);
+      }
     } else {
-      perms = client.elevation(message);
+      let perms = client.elevation(message);
       if (perms < cmd.conf.permLevel) {
         return message.channel.send(`You don't have permission to use this command.`);
       }
