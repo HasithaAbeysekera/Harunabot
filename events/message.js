@@ -23,6 +23,7 @@ module.exports = message => {
   }
   if (cmd) {
     if (message.channel.type == 'dm') {
+      let perms = 0;
       if (cmd.conf.guildOnly) {
         return message.channel.send("Sorry, I don't respond to that command in a DM");
       }
