@@ -22,8 +22,8 @@ module.exports = message => {
     console.log(`Command ${command} activated by ${message.author.username}`);
   }
   if (cmd) {
+    let perms = 0;
     if (message.channel.type == 'dm') {
-      let perms = 0;
       if (cmd.conf.guildOnly) {
         return message.channel.send("Sorry, I don't respond to that command in a DM");
       }
