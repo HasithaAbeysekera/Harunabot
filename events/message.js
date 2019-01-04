@@ -10,7 +10,7 @@ module.exports = message => {
   let args = message.content.split(' ').slice(1);
   let command = message.content.toLowerCase().split(' ')[0].slice(prefix.length);
   let argstring = args.join(' ').toLowerCase();
-  //  let perms = client.elevation(message);
+  let perms = client.elevation(message);
   let cmd;
 
   if (client.commands.has(command)) {
