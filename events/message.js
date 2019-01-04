@@ -27,7 +27,9 @@ module.exports = message => {
         return message.channel.send("Sorry, I don't respond to that command in a DM");
       }
       if(message.author.id != ownerid) {
+        if(cmd.conf.permLevel != 0){
         return message.channel.send(`You don't have permission to use this command.`);
+        }
       }
     } else {
       let perms = client.elevation(message);
