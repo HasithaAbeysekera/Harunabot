@@ -10,7 +10,7 @@ module.exports = message => {
   let args = message.content.split(' ').slice(1);
   let command = message.content.toLowerCase().split(' ')[0].slice(prefix.length);
   let argstring = args.join(' ').toLowerCase();
-  let perms = client.elevation(message);
+  //let perms = client.elevation(message);
   let cmd;
 
   if (client.commands.has(command)) {
@@ -27,7 +27,7 @@ module.exports = message => {
         return message.channel.send("Sorry, I don't respond to that command in a DM");
       }
     } else {
-      let perms = client.elevation(message);
+      perms = client.elevation(message);
       if (perms < cmd.conf.permLevel) {
         return message.channel.send(`You don't have permission to use this command.`);
       }
