@@ -25,7 +25,7 @@ exports.run = function(client, message, args) {
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ['profilepic', 'icon'],
+  aliases: ['profilepic', 'pp'],
   permLevel: 0
 };
 

@@ -92,7 +92,7 @@ client.elevation = message => {
 
 
 
- function changeA() {
+function changeA() {
    changeAvatar(client);
 };
 
