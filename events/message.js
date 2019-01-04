@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const prefix = require('../config.json').prefix;
 const cooldowns = new Discord.Collection();
-const owner = require('../config.json').ownerid;
+const ownerid = require('../config.json').ownerid;
 module.exports = message => {
   let client = message.client;
   if (message.author.bot) return;
