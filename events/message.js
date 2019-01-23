@@ -22,7 +22,7 @@ module.exports = message => {
     console.log(`Command ${command} activated by ${message.author.username}`);
   }
   if (cmd) {
-    if(!cmd.enabled){
+    if(!cmd.conf.enabled){
       return;
     }
     let perms = 0;
