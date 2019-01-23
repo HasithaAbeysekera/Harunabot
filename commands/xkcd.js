@@ -29,7 +29,7 @@ exports.run = function(client, message, args) {
 };
 
 exports.conf = {
-  enabled: true,
+  enabled: false,
   guildOnly: false,
   aliases: [],
   permLevel: 0
