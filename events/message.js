@@ -1,6 +1,5 @@
 const Discord = require("discord.js");
 const prefix = require('../config.json').prefix;
-const cooldowns = new Discord.Collection();
 const ownerid = require('../config.json').ownerid;
 module.exports = message => {
   let client = message.client;
@@ -8,6 +7,7 @@ module.exports = message => {
   if (!message.content.startsWith(prefix)) {
     return;
   }
+
   let args = message.content.split(' ').slice(1);
   let command = message.content.toLowerCase().split(' ')[0].slice(prefix.length);
   let argstring = args.join(' ').toLowerCase();
@@ -22,6 +22,9 @@ module.exports = message => {
     console.log(`Command ${command} activated by ${message.author.username}`);
   }
   if (cmd) {
+    if(!cmd.enabled){
+      return;
+    }
     let perms = 0;
     if (message.channel.type == 'dm') {
       if (cmd.conf.guildOnly) {
